@@ -1,3 +1,8 @@
+# This filter renames command blocks
+# This was created by Podshot
+# If you modify this filter, please give credit to Podshot
+# Have an idea? Can you improve this code? Fork the Github!
+# Link: https://github.com/Podshot/MCEdit-Filters
 from pymclevel import MCSchematic
 from pymclevel import TileEntity
 from pymclevel import TAG_List
@@ -54,6 +59,7 @@ def perform(level, box, options):
     for (chunk, slices, point) in level.getChunkSlices(box):
         for e in chunk.Entities:
             if e["id"].value == "mob":
+               # Finds any mob with the current id value
                 x = e["x"].value
                 y = e["y"].value
                 z = e["z"].value
@@ -63,3 +69,4 @@ def perform(level, box, options):
                     chunk.dirty = True
     for (chunk, e) in entitiesToRemove:
         chunk.Entities.remove(e)
+        # removes the entities
