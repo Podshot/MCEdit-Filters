@@ -1,3 +1,8 @@
+# This filter renames command blocks
+# This was created by Podshot
+# If you modify this filter, please give credit to Podshot
+# Have an idea? Can you improve this code? Fork the Github!
+# Link: https://github.com/Podshot/MCEdit-Filters
 from pymclevel import MCSchematic
 from pymclevel import TileEntity
 from pymclevel import TAG_List
@@ -16,7 +21,7 @@ displayName = "Make Mobs Persistent"
 inputs = (
         ("Makes any mobs in the Selection Box Persistent", "label"),
 )
-
+# The user can't interact with that input, its great for giving extra info
 def perform(level, box, options):
     for (chunk, slices, point) in level.getChunkSlices(box):
         for e in chunk.Entities:
@@ -31,3 +36,4 @@ def perform(level, box, options):
 
                                         e["PersistenceRequired"] = TAG_Byte(1)
                                         chunk.dirty = True
+                                        # Marks chunk as changed and that the changes need to be saved
