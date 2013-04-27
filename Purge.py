@@ -1,4 +1,4 @@
-# This filter renames command blocks
+# This filter removes the selected entity
 # This was created by Podshot
 # If you modify this filter, please give credit to Podshot
 # Have an idea? Can you improve this code? Fork the Github!
