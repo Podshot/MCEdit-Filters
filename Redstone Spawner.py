@@ -21,7 +21,11 @@ displayName = "Red-Spawner"
 
 inputs = (
         ("Material:", alphaMaterials.YellowWool),
-        ("Made by Podshot, huehuehue", "label"),
+        ("Made by Podshot", "label"),
+        ("Change the sponge that is generated", "label"),
+        ("To a spawner that spawns a spawner minecart between", "label"),
+        ("The sponge and the dispenser", "label"),
+        ("Make sure to add a lava bucket to the dispenser before use!", "label"),
 )
 
 def setBlock(level, (block, data), x, y, z):
