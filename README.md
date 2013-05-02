@@ -12,7 +12,7 @@ Repository, look at the Developer Section.
 User Section
 =============================================
 These are download links to completed filters
-Put the files in <MCEdit Folder>\filters
+Put the files in (MCEdit Folder)\filters
 And then run the filter tool!
 
 Command Block Namer.py: http://bit.ly/13KcKeA
