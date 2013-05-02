@@ -9,7 +9,7 @@ Repository, look at the Developer Section.
 
 
 =============================================
-              User Section
+User Section
 =============================================
 These are download links to completed filters
 Put the files in <MCEdit Folder>\filters
@@ -25,7 +25,7 @@ Purge.py: http://bit.ly/12jDvUG
 
 
 =============================================
-              Developer Section
+Developer Section
 =============================================
 If you wish to contribute to this github
 please fork the Repository and add filters or
