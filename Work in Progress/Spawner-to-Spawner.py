@@ -1,3 +1,9 @@
+# This filter creates a spawner minecart
+# Then creates a spawner that spawns the Spawner Minecart
+# This was created by Podshot
+# If you modify this filter, please give credit to Podshot
+# Have an idea? Can you improve this code? Fork the Github!
+# Link: https://github.com/Podshot/MCEdit-Filters
 from pymclevel import TAG_Compound
 from pymclevel import TAG_Int
 from pymclevel import TAG_Short
@@ -19,7 +25,10 @@ from pymclevel import MCSchematic
 displayName = "Minecart Spawner"
 
 inputs = (
-    ("Test", "label"),
+    ("Make sure to select a Spawner", "label"),
+    ("", "label"),
+    ("This filter will create a Spawner-Minecart Spawner of the current Spawner", "label"),
+    # Hey, we heard you liked spawners so we put a spawner in a spawner so you can spawn when you spawn
 )
 
 def dat(level, box, options):
@@ -73,9 +82,10 @@ def spawn(level, box, options):
                 entitiesToRemove.append((chunk, entity))
 
                 level.setBlockAt(x2, y2, z2, 52)
-
+                # Sets the block at the coordinates to 52, the spawner block
                 spawner = TileEntity.Create("MobSpawner")
                 TileEntity.setpos(spawner, (x2, y2, z2))
+                # Makes the block at the coordinates a Tile Entity with the value of Spawner
                 spawner["Delay"] = TAG_Short(120)
                 spawner["SpawnData"] = entity
                 spawner["EntityId"] = entity["id"]
@@ -84,6 +94,7 @@ def spawn(level, box, options):
 
     for (chunk, entity) in entitiesToRemove:
         chunk.Entities.remove(entity)
+        # Removes the spawner-minecart entity
 
 
 def perform(level, box, option):
