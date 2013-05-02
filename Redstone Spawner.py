@@ -1,3 +1,8 @@
+# This filter creates Traz-Landers Redstone Controlled Spawner Layout
+# This was created by Podshot
+# If you modify this filter, please give credit to Podshot
+# Have an idea? Can you improve this code? Fork the Github!
+# Link: https://github.com/Podshot/MCEdit-Filters
 import time # for timing
 from math import sqrt, tan, sin, cos, pi, ceil, floor, acos, atan, asin, degrees, radians, log, atan2
 from random import *
@@ -26,9 +31,13 @@ inputs = (
         ("To a spawner that spawns a spawner minecart between", "label"),
         ("The sponge and the dispenser", "label"),
         ("Make sure to add a lava bucket to the dispenser before use!", "label"),
+        ("", "label"),
+        ("It will generate the layout towards the west, put the selection box", "label"),
+        ("were the inupt is. Make sure the selection box is 1x1x1!
 )
 
 def setBlock(level, (block, data), x, y, z):
+    # Credit to Abrightmoore for helping me with repeater directions
     counter = 9
     con = 1
     # Start Generation
@@ -126,6 +135,7 @@ def platform(level, box, options):
     AIRBLOCK = 0
     AIR = (AIRBLOCK,0)
     mat = (options["Material:"].ID, options["Material:"].blockData)
+    # Calls the function "setBlock" and provides it with its required arguments"
     setBlock(level, mat, box.minx, box.miny, box.minz)
     print '%s: Ended: %s' % (method, time.ctime())
     
