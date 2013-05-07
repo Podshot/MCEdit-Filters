@@ -40,6 +40,9 @@ def perform(level, box, options):
     method = "Generator"
     print '%s: Started: %s' % (method, time.ctime())
     AIRBLOCK = 0
+    bx = box.minx
+    by = box.miny
+    bz = box.minz
     # Start input finder
     if buil == "smith":
         print 'Choose Blacksmith'
@@ -52,14 +55,71 @@ def perform(level, box, options):
 
     elif buil == "h1":
         print 'Choose House #1'
-        level.setBlockAt(x, y, z, 4)
-        level.setBlockDataAt(x, y, z, 0)
-        level.setBlockAt(x-1, y, z, 67)
-        level.setBlockDataAt(x-1, y, z, 0x0)
-        level.setBlockAt(x+1, y, z, 4)
-        level.setBlockDataAt(x+1, y, z, 0)
-        level.setBlockAt(x+2, y, z, 4)
-        level.setBlockDataAt(x+2, y, z, 0)
+        level.setBlockAt(bx, by, bz, 4)
+        level.setBlockDataAt(bx, by, bz, 0)
+        level.setBlockAt(bx-1, by, bz, 67)
+        level.setBlockDataAt(bx-1, by, bz, 0x0)
+        level.setBlockAt(bx+1, by, bz, 4)
+        level.setBlockDataAt(bx+1, by, bz, 0)
+        level.setBlockAt(bx+2, by, bz, 4)
+        level.setBlockDataAt(bx+2, by, bz, 0)
+        level.setBlockAt(bx+3, by, bz, 4)
+        level.setBlockDataAt(bx+3, by, bz, 0)
+        level.setBlockAt(bx+4, by, bz, 4)
+        level.setBlockDataAt(bx+4, by, bz, 0)
+        level.setBlockAt(bx+5, by, bz, 4)
+        level.setBlockDataAt(bx+5, by, bz, 0)
+        level.setBlockAt(bx, by, bz+1, 4)
+        level.setBlockDataAt(bx, by, bz+1, 0)
+        level.setBlockAt(bx+1, by, bz+1, 4)
+        level.setBlockDataAt(bx+1, by, bz+1, 0)
+        level.setBlockAt(bx+2, by, bz+1, 4)
+        level.setBlockDataAt(bx+2, by, bz+1, 0)
+        level.setBlockAt(bx+3, by, bz+1, 4)
+        level.setBlockDataAt(bx+3, by, bz+1, 0)
+        level.setBlockAt(bx+4, by, bz+1, 4)
+        level.setBlockDataAt(bx+4, by, bz+1, 0)
+        level.setBlockAt(bx+5, by, bz+1, 4)
+        level.setBlockDataAt(bx+5, by, bz+1, 0)
+        level.setBlockAt(bx, by, bz+2, 4)
+        level.setBlockDataAt(bx, by, bz+2, 0)
+        level.setBlockAt(bx+1, by, bz+2, 4)
+        level.setBlockDataAt(bx+1, by, bz+2, 0)
+        level.setBlockAt(bx+2, by, bz+2, 4)
+        level.setBlockDataAt(bx+2, by, bz+2, 0)
+        level.setBlockAt(bx+3, by, bz+2, 4)
+        level.setBlockDataAt(bx+3, by, bz+2, 0)
+        level.setBlockAt(bx+4, by, bz+2, 4)
+        level.setBlockDataAt(bx+4, by, bz+2, 0)
+        level.setBlockAt(bx+5, by, bz+2, 4)
+        level.setBlockDataAt(bx+5, by, bz+2, 0)
+        level.setBlockAt(bx, by, bz-1, 4)
+        level.setBlockDataAt(bx, by, bz-1, 0)
+        level.setBlockAt(bx+1, by, bz-1, 4)
+        level.setBlockDataAt(bx+1, by, bz-1, 0)
+        level.setBlockAt(bx+2, by, bz-1, 4)
+        level.setBlockDataAt(bx+2, by, bz-1, 0)
+        level.setBlockAt(bx+3, by, bz-1, 4)
+        level.setBlockDataAt(bx+3, by, bz-1, 0)
+        level.setBlockAt(bx+4, by, bz-1, 4)
+        level.setBlockDataAt(bx+4, by, bz-1, 0)
+        level.setBlockAt(bx+5, by, bz-1, 4)
+        level.setBlockDataAt(bx+5, by, bz-1, 0)
+        level.setBlockAt(bx, by, bz-2, 4)
+        level.setBlockDataAt(bx, by, bz-2, 0)
+        level.setBlockAt(bx+1, by, bz-2, 4)
+        level.setBlockDataAt(bx+1, by, bz-2, 0)
+        level.setBlockAt(bx+2, by, bz-2, 4)
+        level.setBlockDataAt(bx+2, by, bz-2, 0)
+        level.setBlockAt(bx+3, by, bz-2, 4)
+        level.setBlockDataAt(bx+3, by, bz-2, 0)
+        level.setBlockAt(bx+4, by, bz-2, 4)
+        level.setBlockDataAt(bx+4, by, bz-2, 0)
+        level.setBlockAt(bx+5, by, bz-2, 4)
+        level.setBlockDataAt(bx+5, by, bz-2, 0)
+        # Finish first row of generation
+        
+        
 
     elif buil == "h2":
         print 'Choose House #2'
