@@ -7,6 +7,7 @@ displayName = "Demo Filter: Block Gen"
 inputs = (
         ("Material:", alphaMaterials),
         ("A filter version of the Fill Tool", "label"),
+        ("However, It will only generate blocks in the very corners of the Selection Box.", "label"),
 )
 def setBlock(level, (block, data), x, y, z):
     level.setBlockAt(x, y, z, block)
