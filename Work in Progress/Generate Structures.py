@@ -9,26 +9,29 @@ from pymclevel import TAG_Double
 from pymclevel import TAG_Float
 from pymclevel import TAG_String
 from math import sqrt
+from numpy import zeros
 import random
 
 displayName = "Generate Structure"
 
-build = {
-    "Blacksmith": smith,
-    "Church": church,
-    "Library": lib,
-    "House #1": h1,
-    "House #2": h2,
-    "House #3": h3,
-    "Fountain": foun,
-    "Farm": farm,
+Build = {
+    "Blacksmith": "smith",
+    "Church": "church",
+    "Library": "lib",
+    "House #1": "h1",
+    "House #2": "h2",
+    "House #3": "h3",
+    "Fountain": "foun",
+    "Farm": "farm",
     }
 
 inputs = (
-        ("Building", tuple(build.keys())),
+        ("Building", tuple(Build.keys())),
         ("Note: This filter does not generate doors", "label"),
 )
 
+def blacksmith(level, box, options):
+    
 def end(level, box, options):
     method = "Generator"
     print '%s: Ended: %s' % (method, time.ctime())
@@ -118,6 +121,48 @@ def perform(level, box, options):
         level.setBlockAt(bx+5, by, bz-2, 4)
         level.setBlockDataAt(bx+5, by, bz-2, 0)
         # Finish first row of generation
+        level.setBlockAt(bx, by+1, bz+1, 5)
+        level.setBlockDataAt(bx, by+1, bz+1, 0)
+        level.setBlockAt(bx, by+1, bz-1, 5)
+        level.setBlockDataAt(bx, by+1, bz-1, 0)
+        # Start Back Wall Generation
+        level.setBlockAt(bx+5, by+1, bz, 5)
+        level.setBlockDataAt(bx+5, by+1, bz, 0)
+        level.setBlockAt(bx+5, by+1, bz+1, 5)
+        level.setBlockDataAt(bx+5, by+1, bz+1, 0)
+        level.setBlockAt(bx+5, by+1, bz-1, 5)
+        level.setBlockDataAt(bx+5, by+1, bz-1, 0)
+        level.setBlockAt(bx+5, by+1, bz+1, 5)
+        level.setBlockDataAt(bx+5, by+1, bz+1, 0)
+        # Back Wall Generated
+        level.setBlockAt(bx, by+1, bz+2, 4)
+        level.setBlockDataAt(bx, by+1, bz+2, 0)
+        level.setBlockAt(bx+1, by+1, bz+2, 5)
+        level.setBlockDataAt(bx+1, by+1, bz+2, 0)
+        level.setBlockAt(bx+2, by+1, bz+2, 5)
+        level.setBlockDataAt(bx+2, by+1, bz+2, 0)
+        level.setBlockAt(bx+3, by+1, bz+2, 5)
+        level.setBlockDataAt(bx+3, by+1, bz+2, 0)
+        level.setBlockAt(bx+4, by+1, bz+2, 5)
+        level.setBlockDataAt(bx+4, by+1, bz+2, 0)
+        level.setBlockAt(bx+5, by+1, bz+2, 4)
+        level.setBlockDataAt(bx+5, by+1, bz+2, 0)
+        # Wall One Generated
+        level.setBlockAt(bx, by+1, bz-2, 4)
+        level.setBlockDataAt(bx, by+1, bz-2, 0)
+        level.setBlockAt(bx+1, by+1, bz-2, 5)
+        level.setBlockDataAt(bx+1, by+1, bz-2, 0)
+        level.setBlockAt(bx+2, by+1, bz-2, 5)
+        level.setBlockDataAt(bx+2, by+1, bz-2, 0)
+        level.setBlockAt(bx+3, by+1, bz-2, 5)
+        level.setBlockDataAt(bx+3, by+1, bz-2, 0)
+        level.setBlockAt(bx+4, by+1, bz-2, 5)
+        level.setBlockDataAt(bx+4, by+1, bz-2, 0)
+        level.setBlockAt(bx+5, by+1, bz-2, 4)
+        level.setBlockDataAt(bx+5, by+1, bz-2, 0)
+        # Second Row Generated
+        
+        
         
         
 
