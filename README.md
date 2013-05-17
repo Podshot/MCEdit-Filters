@@ -5,6 +5,12 @@ wish to download filters, look at the users
 section. If you want to contribute to this
 Repository, look at the Developer Section.
 
+The following names have contributed to 
+the GitHub:
+
+Podshot
+Tomsik68
+
 
 
 
