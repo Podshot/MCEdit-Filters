@@ -1,3 +1,4 @@
+from pymclevel import alphaMaterials
 from pymclevel import MCSchematic
 from pymclevel import TileEntity
 from pymclevel import TAG_List
@@ -9,7 +10,7 @@ from pymclevel import TAG_Double
 from pymclevel import TAG_Float
 from pymclevel import TAG_String
 from math import sqrt
-from numpy import zeros
+from numpy import *
 import random
 import time
 
@@ -31,7 +32,7 @@ inputs = (
         ("Note: This filter does not generate doors", "label"),
 )
 
-def house1(level, x, y, z):
+def houseOne(level, x, y, z):
     level.setBlockAt(x, y, z, 4)
     level.setBlockDataAt(x, y, z, 0)
     level.setBlockAt(x-1, y, z, 67)
@@ -155,38 +156,39 @@ def house1(level, x, y, z):
     
 def perform(level, box, options):
     method = "Generator"
-    print '%s: Started: %s' % (method, time.ctime())
-    findin(level, box, options)
+    findIn(level, box, options)
     print '%s: Ended: %s' % (method, time.ctime())
     level.markDirtyBox(box)
         
-def findin(level, box, options):
-    buil = options["Building"]
+def findIn(level, box, options):
+    build = options["Building"]
+    method = "Generator"
+    print '%s: Started: %s' % (method, time.ctime())
+    print '%s: Choose building: %s' % (method, build)
     # Start input finder
-    if buil == "1":
+    if build == "1":
         print 'Choose Blacksmith'
 
-    elif buil == "2":
+    elif build == "2":
         print 'Choose Church'
 
-    elif buil == "3":
+    elif build == "3":
         print 'Choose Library'
 
-    elif buil == "4":
-        print 'Choose House #1'
-        house1(level, box.minx, box.miny, box.minz)
+    elif build == "House #1":
+        houseOne(level, box.minx, box.miny, box.minz)
         
 
-    elif buil == "5":
+    elif build == "5":
         print 'Choose House #2'
 
-    elif buil == "6":
+    elif build == "6":
         print 'Choose House #3'
 
-    elif buil == "7":
+    elif build == "7":
         print 'Choose Fountain'
         
 
-    elif buil == "8":
+    elif build == "8":
         print 'Choose Farm'
     
