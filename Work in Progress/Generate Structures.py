@@ -28,7 +28,7 @@ Build = {
     }
 
 inputs = (
-        ("Building", tuple(Build.keys())),
+        ("Building", tuple(sorted(Build.keys()))),
         ("Note: This filter does not generate doors", "label"),
 )
 
@@ -153,6 +153,27 @@ def houseOne(level, x, y, z):
     level.setBlockAt(x+3, y+2, z+2, 5)
     level.setBlockDataAt(x+3, y+2, z+2, 0)
     level.setBlockAt(x+4, y+2, z+2, 5)
+    level.setBlockDataAt(x+4, y+2, z+2, 0)
+    level.setBlockAt(x+5, y+2, z+2, 4)
+    level.setBlockDataAt(x+5, y+2, z+2, 0)
+    # Right wall generated
+    level.setBlockAt(x+5, y+2, z+1, 5)
+    level.setBlockDataAt(x+5, y+2, z+1, 0)
+    level.setBlockAt(x+5, y+2, z, 102)
+    level.setBlockDataAt(x+5, y+2, z, 0)
+    level.setBlockAt(x+5, y+2, z-1, 5)
+    level.setBlockDataAt(x+5, y+2, z-1, 0)
+    level.setBlockAt(x+5, y+2, z-2, 4)
+    level.setBlockDataAt(x+5, y+2, z-2, 0)
+    # Back Wall Generated
+    level.setBlockAt(x+4, y+2, z-2, 5)
+    level.setBlockDataAt(x+4, y+2, z-2, 0)
+    level.setBlockAt(x+3, y+2, z-2, 102)
+    level.setBlockDataAt(x+3, y+2, z-2, 0)
+    level.setBlockAt(x+2, y+2, z-2, 5)
+    level.setBlockDataAt(x+2, y+2, z-2, 0)
+    # 3rd layer generated
+    
     
 def perform(level, box, options):
     method = "Generator"
@@ -167,28 +188,18 @@ def findIn(level, box, options):
     print '%s: Choose building: %s' % (method, build)
     # Start input finder
     if build == "1":
-        print 'Choose Blacksmith'
-
+        print 'Test'
     elif build == "2":
-        print 'Choose Church'
-
+        print 'Choose'
     elif build == "3":
         print 'Choose Library'
-
     elif build == "House #1":
         houseOne(level, box.minx, box.miny, box.minz)
-        
-
     elif build == "5":
         print 'Choose House #2'
-
     elif build == "6":
         print 'Choose House #3'
-
     elif build == "7":
         print 'Choose Fountain'
-        
-
     elif build == "8":
         print 'Choose Farm'
-    
