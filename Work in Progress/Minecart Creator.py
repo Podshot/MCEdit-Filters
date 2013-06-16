@@ -1,3 +1,10 @@
+# This is filter that creates a custom minecart in the selection box
+# This filter was created by Podshot
+# If you redistribute/modify, please give credit to Podshot
+# ================================================================
+# Have an idea? Can you improve this code? Fork the Github!
+# Link: https://github.com/Podshot/MCEdit-Filters
+
 from pymclevel import TAG_Compound
 from pymclevel import TAG_Int
 from pymclevel import TAG_Short

@@ -1,3 +1,10 @@
+# This is filter that changes a spawner's spawning coordinates to a sponge block in the selection
+# This filter was created by Podshot
+# If you redistribute/modify, please give credit to Podshot
+# ================================================================
+# Have an idea? Can you improve this code? Fork the Github!
+# Link: https://github.com/Podshot/MCEdit-Filters
+
 from pymclevel import TileEntity
 from pymclevel import TAG_List
 from pymclevel import TAG_Byte

@@ -1,3 +1,10 @@
+# This is filter that renames existing mobs, requested by VideoGameMaster on The Minecraft Forums
+# This filter was created by Podshot
+# If you redistribute/modify, please give credit to Podshot
+# ================================================================
+# Have an idea? Can you improve this code? Fork the Github!
+# Link: https://github.com/Podshot/MCEdit-Filters
+
 from pymclevel import TAG_Compound
 from pymclevel import TAG_Int
 from pymclevel import TAG_Short
@@ -33,6 +40,7 @@ colors = {
 	"Pink": "d",
 	"Yellow": "e",
 	}
+displayName = "Rename Mobs"
 
 inputs = (
     ("Name",("string","value=")),

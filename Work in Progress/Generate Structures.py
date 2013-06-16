@@ -1,3 +1,10 @@
+# This is filter that generates buildings that can be found in a NPC Village
+# This filter was created by Podshot
+# If you redistribute/modify, please give credit to Podshot
+# ================================================================
+# Have an idea? Can you improve this code? Fork the Github!
+# Link: https://github.com/Podshot/MCEdit-Filters
+
 from pymclevel import alphaMaterials
 from pymclevel import MCSchematic
 from pymclevel import TileEntity
