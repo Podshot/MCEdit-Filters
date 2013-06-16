@@ -9,6 +9,7 @@ The following names have contributed to
 the GitHub:
 
 Podshot
+<br>
 Tomsik68
 
 
@@ -27,7 +28,17 @@ Persistence.py: http://bit.ly/11U9fCn
 
 Purge.py: http://bit.ly/12jDvUG
 
+Rename Tiles.py: http://bit.ly/14E6kzT
 
+AddVines.py: http://bit.ly/1692uhm
+
+filldispensers.py: http://bit.ly/16uYAQC
+
+SchematicToScript.py: http://bit.ly/17dXNaD
+
+Name Mobs.py: http://bit.ly/159GOPL
+
+SetBlockData.py: http://bit.ly/1bKaJBE
 
 
 =============================================
