@@ -14,6 +14,7 @@ from pymclevel import TAG_Float
 from pymclevel import TAG_Double
 from pymclevel import TAG_List
 from pymclevel import MCSchematic
+from pymclevel inport TAG_String
 
 formatting = {
     "Bold":"l",
