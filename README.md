@@ -48,5 +48,6 @@ If you wish to contribute to this github
 please fork the Repository and add filters or
 change existing ones.
 
-If you wish to start making filters, a demo 
-section will be added in the coming days
+If you wish to start making filters, the Demo
+folder should help you in the basics. If you
+have trouble, I will gladly help.
