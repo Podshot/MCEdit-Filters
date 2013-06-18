@@ -68,9 +68,9 @@ def perform(level, box, options):
 
     for (chunk, slices, point) in level.getChunkSlices(box):
         for e in chunk.Entities:
-            x = e["x"].value
-            y = e["y"].value
-            z = e["z"].value
+            x = e["Pos"][0].value
+            y = e["Pos"][1].value
+            z = e["Pos"][2].value
             if x >= box.minx and x < box.maxx and y >= box.miny and y < box.maxy and z >= box.minz and z < box.maxz:
                 e["CustomNameVisible"] = TAG_Byte(1)
                 e["CustomName"] = TAG_String(name)
