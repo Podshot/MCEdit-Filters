@@ -36,7 +36,8 @@ filldispensers.py: http://bit.ly/16uYAQC
 
 SchematicToScript.py: http://bit.ly/17dXNaD
 
-Name Mobs.py: http://bit.ly/159GOPL
+Name Mobs.py: http://bit.ly/16eHuWk
+Right Click and Click "Save-As"
 
 SetBlockData.py: http://bit.ly/1bKaJBE
 
