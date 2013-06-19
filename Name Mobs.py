@@ -14,7 +14,6 @@ from pymclevel import TAG_Float
 from pymclevel import TAG_Double
 from pymclevel import TAG_List
 from pymclevel import MCSchematic
-from pymclevel inport TAG_String
 
 formatting = {
     "Bold":"l",
@@ -74,6 +73,6 @@ def perform(level, box, options):
             z = e["Pos"][2].value
             if x >= box.minx and x < box.maxx and y >= box.miny and y < box.maxy and z >= box.minz and z < box.maxz:
                 e["CustomNameVisible"] = TAG_Byte(1)
-                e["CustomName"] = TAG_String(name)
+                e["CustomName"] = name
                 chunk.dirty = True
     
