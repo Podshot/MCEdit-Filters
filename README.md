@@ -18,29 +18,12 @@ Tomsik68
 =============================================
 User Section
 =============================================
-These are download links to completed filters
+The download links to completed filters
+are on the Filter Site.
 Put the files in (MCEdit Folder)\filters
 And then run the filter tool!
 
-Command Block Namer.py: http://bit.ly/13KcKeA
-
-Persistence.py: http://bit.ly/11U9fCn
-
-Purge.py: http://bit.ly/12jDvUG
-
-Rename Tiles.py: http://bit.ly/14E6kzT
-
-AddVines.py: http://bit.ly/1692uhm
-
-filldispensers.py: http://bit.ly/16uYAQC
-
-SchematicToScript.py: http://bit.ly/17dXNaD
-
-Name Mobs.py: http://bit.ly/16eHuWk
-<br>
-Right Click and Click "Save-As"
-
-SetBlockData.py: http://bit.ly/1bKaJBE
+[Filter Site](https://dl.dropboxusercontent.com/s/9uvpsn4nujg7ng9/Page.html)
 
 
 =============================================
