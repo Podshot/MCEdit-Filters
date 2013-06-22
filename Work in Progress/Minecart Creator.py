@@ -23,6 +23,7 @@ Carts = {
       "TNT": MinecartTNT,
       "Chest": MinecartChest,
       "Hopper": MinecartHopper,
+}
 
 inputs = (
     ("Block:", "blocktype"),
