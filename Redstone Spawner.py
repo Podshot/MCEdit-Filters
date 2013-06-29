@@ -33,7 +33,7 @@ inputs = (
         ("Make sure to add a lava bucket to the dispenser before use!", "label"),
         ("", "label"),
         ("It will generate the layout towards the west, put the selection box", "label"),
-        ("were the inupt is. Make sure the selection box is 1x1x1!
+        ("were the inupt is. Make sure the selection box is 1x1x1!", "label"),
 )
 
 def setBlock(level, (block, data), x, y, z):
@@ -138,4 +138,3 @@ def platform(level, box, options):
     # Calls the function "setBlock" and provides it with its required arguments"
     setBlock(level, mat, box.minx, box.miny, box.minz)
     print '%s: Ended: %s' % (method, time.ctime())
-    
