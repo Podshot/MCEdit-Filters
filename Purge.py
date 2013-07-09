@@ -58,7 +58,7 @@ def perform(level, box, options):
     entitiesToRemove = []
     for (chunk, slices, point) in level.getChunkSlices(box):
         for e in chunk.Entities:
-            if e["id"].value == "mob":
+            if e["id"].value == mob:
                # Finds any mob with the current id value
                 x = e["x"].value
                 y = e["y"].value
