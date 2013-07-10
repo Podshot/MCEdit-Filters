@@ -24,7 +24,7 @@ are on the Filter Site.
 Put the files in (MCEdit Folder)\filters
 And then run the filter tool!
 
-[Filter Site](https://dl.dropboxusercontent.com/s/9uvpsn4nujg7ng9/Page.html)
+[Filter Site](https://podshot.github.io)
 
 
 =============================================
