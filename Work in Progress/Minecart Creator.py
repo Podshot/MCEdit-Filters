@@ -14,6 +14,8 @@ from pymclevel import TAG_Float
 from pymclevel import TAG_Double
 from pymclevel import TAG_List
 from pymclevel import MCSchematic
+from pymclevel import TileEntity
+
 
 displayName = "Custom Minecart Creator"
 
@@ -43,10 +45,20 @@ def perform(level, box, options):
     height = options["Block Height from Cart:"]
     typ = options["Type of Cart:"]
     tileEntitiesToRemove = []
-    pos_x = box.minx
-    pos_y = box.miny + 1
-    pos_z = box.minz
-    
+
+    if typ == "Ridable":
+        mc = TAG_String("MinecartRideable")
+    elif typ == "Furnace":
+        mc = TAG_String("MinecartFurnace")
+    elif typ == "TNT":
+        mc = TAG_String("MinecartTNT")
+    elif typ == "Chest":
+        mc = TAG_String("MinecartChest")
+    elif typ == "Hopper":
+        mc = TAG_String("MinecartHopper")
+    elif typ == "Spawner":
+        mc = TAG_String("MinecartSpawner")
+        
     for (chunk, slices, point) in level.getChunkSlices(box):
             for t in chunk.TileEntities:
 		x = t["x"].value
@@ -57,35 +69,34 @@ def perform(level, box, options):
 
                 level.setBlockAt(x, y, z, 0)
 
-                cart = TAG_Compound()
-                cart["Air"] = TAG_Short(300)
-                cart["FallDistance"] = TAG_Float(0)
-                cart["Fire"] = TAG_Short(-1)
-                cart["id"] = TAG_String(typ)
-                cart["Invulnerable"] = TAG_Byte(0)
-                cart["Motion"] = TAG_List()
-                cart["Motion"].append(TAG_Double(0))
-                cart["Motion"].append(TAG_Double(-0))
-                cart["Motion"].append(TAG_Double(0))
-                cart["Pos"] = TAG_List()
-                cart["Pos"].append(TAG_Double(pos_x))
-                cart["Pos"].append(TAG_Double(pos_y))
-                cart["Pos"].append(TAG_Double(pos_z))
-                cart["Rotation"] = TAG_List()
-		cart["Rotation"].append(TAG_Float(0))
-		cart["Rotation"].append(TAG_Float(0))
-                cart["CustomDisplayTile"] = TAG_Byte(1)
-                cart["DisplayTile"] = TAG_Int(block)
-                cart["DisplayData"] = TAG_Int(data)
-                cart["DisplayOffset"] = TAG_Int(height)
-                cart["CustomName"] = TAG_String()
-		if typ == "Spawner":
-		    for tag in t:
-                        if tag not in ["id", "x", "y", "z"]:
-	    		    cart[tag] = t[tag]
+            cart = TAG_Compound()
+            cart["Air"] = TAG_Short(300)
+            cart["FallDistance"] = TAG_Float(0)
+            cart["Fire"] = TAG_Short(-1)
+            cart["id"] = mc
+            cart["Invulnerable"] = TAG_Byte(0)
+            cart["Motion"] = TAG_List()
+            cart["Motion"].append(TAG_Double(0))
+            cart["Motion"].append(TAG_Double(-0))
+            cart["Motion"].append(TAG_Double(0))
+            cart["Pos"] = TAG_List()
+            cart["Pos"].append(TAG_Double(box.minx + 0.5))
+            cart["Pos"].append(TAG_Double(box.miny + 1))
+            cart["Pos"].append(TAG_Double(box.minz + 0.5))
+            cart["Rotation"] = TAG_List()
+	    cart["Rotation"].append(TAG_Float(0))
+	    cart["Rotation"].append(TAG_Float(0))
+            cart["CustomDisplayTile"] = TAG_Byte(1)
+            cart["DisplayTile"] = TAG_Int(block)
+            cart["DisplayData"] = TAG_Int(data)
+            cart["DisplayOffset"] = TAG_Int(height)
+	    if typ == "Spawner":
+		for tag in t:
+                    if tag not in ["id", "x", "y", "z"]:
+	    		cart[tag] = t[tag]
 
-                chunk.Entities.append(cart)
-                chunk.dirty = True
+            chunk.Entities.append(cart)
+            chunk.dirty = True
 				
     for (chunk, t) in tileEntitiesToRemove:
 	    chunk.TileEntities.remove(t)
