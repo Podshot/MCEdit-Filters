@@ -1,10 +1,11 @@
-# This is filter Fireworks Editor. It can edit fireworks rocket item in a chest.
+# This is filter Fireworks Editor. It can edit fireworks rocket item in a container.
 # This filter was created by Tomsik68
 # If you redistribute/modify, please give credit to Tomsik68 :)
 # ================================================================
 # Have an idea? Can you improve this code? Fork the Github!
 # Link: https://github.com/Podshot/MCEdit-Filters
 from pymclevel.nbt import TAG_Compound, TAG_Byte, TAG_List, TAG_Int_Array, TAG_Short
+from random import randint
 fireworkTypes = {
     "Small Ball":0,
     "Large Ball":1,
@@ -31,6 +32,14 @@ inputs = (
   ("Color #3 B", (0,0,256)),
   ("Flight", (0,0,16))
 )
+class RGBColor():
+    def __init__(self):
+        self.r = 0
+        self.g = 0
+        self.b = 0
+        self.rgb = 0
+    def recalcRGB(self):
+        self.rgb = self.r * 65536 + self.g * 256 + self.b
 containerSlotCounts = {"Trap":9,"Dropper":9,"Chest":27,"Cauldron":4,"Furnace":3,"Hopper":5}
 displayName = "Fireworks Editor"
 def getFreeSlots(container):
@@ -42,6 +51,18 @@ def getFreeSlots(container):
         if "Slot" in item:
             result.remove(item["Slot"].value)
     return result
+def getColor(options, num):
+    color = RGBColor()
+    if options["Randomize Colors"]:
+        color.r = randint(0,256)
+        color.g = randint(0,256)
+        color.b = randint(0,256)
+    else:
+        color.r = options["Color #"+str(num)+" R"]
+        color.g = options["Color #"+str(num)+" G"]
+        color.b = options["Color #"+str(num)+" B"]
+    color.recalcRGB()
+    return color
 def createExplosionFromOptions(options):
     explosion = TAG_Compound()
     
@@ -60,7 +81,11 @@ def createExplosionFromOptions(options):
     typeVal = fireworkTypes[options["Type"]]
     explosion["Type"] = TAG_Byte(typeVal)
     
-    colors = [8073150]
+    colors = []
+    rang = range(1,4)
+    for i in rang:
+        color = getColor(options, i)
+        colors.append(color.rgb)
     explosion["Colors"] = TAG_Int_Array(colors)
     return explosion
 def perform(level, box, options):
@@ -76,7 +101,7 @@ def perform(level, box, options):
                         if item["id"].value == 401:
                             foundFirework = True
                             if not "tag" in item:
-                                item["tag"] = TAG_Compound("tag")
+                                item["tag"] = TAG_Compound()
                             if not "Fireworks" in item["tag"]:
                                 item["tag"]["Fireworks"] = TAG_Compound()
                             if not "Explosions" in item["tag"]["Fireworks"] or options["Overwrite Existing Explosions"]:
@@ -98,3 +123,4 @@ def perform(level, box, options):
                             fireworkItem["tag"]["Fireworks"]["Flight"] = TAG_Byte(options["Flight"])
                             fireworkItem["tag"]["Fireworks"]["Explosions"].append(createExplosionFromOptions(options))
                             t["Items"].append(fireworkItem)
+                            chunk.dirty = True
