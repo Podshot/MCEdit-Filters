@@ -4,7 +4,7 @@
 # ================================================================
 # Have an idea? Can you improve this code? Fork the Github!
 # Link: https://github.com/Podshot/MCEdit-Filters
-from pymclevel.nbt import TAG_Compound, TAG_Byte, TAG_List, TAG_Int_Array, TAG_Short
+from pymclevel.nbt import TAG_Compound, TAG_Byte, TAG_List, TAG_Int_Array, TAG_Short, TAG_String, TAG_Int
 from random import randint
 fireworkTypes = {
     "Small Ball":0,
@@ -30,7 +30,7 @@ inputs = (
   ("Color #3 R", (0,0,256)),
   ("Color #3 G", (0,0,256)),
   ("Color #3 B", (0,0,256)),
-  ("Flight", (0,0,16))
+  ("Flight", (0,-2,16))
 )
 class RGBColor():
     def __init__(self):
@@ -89,6 +89,17 @@ def createExplosionFromOptions(options):
     explosion["Colors"] = TAG_Int_Array(colors)
     return explosion
 def perform(level, box, options):
+    if box.width == 1 and box.height == 1 and box.length == 1 and level.blockAt(box.minx, box.miny, box.minz) == 0:
+        level.setBlockAt(box.minx, box.miny, box.minz, 54)
+        chest = TAG_Compound()
+        chest["Items"] = TAG_List()
+        chest["id"] = TAG_String(u'Chest')
+        chest["x"] = TAG_Int(box.minx)
+        chest["y"] = TAG_Int(box.miny)
+        chest["z"] = TAG_Int(box.minz)
+        chunk = level.getChunk(box.minx/16, box.minz/16)
+        chunk.TileEntities.append(chest)
+        chunk.dirty = True
     for (chunk, slices, point) in level.getChunkSlices(box):
         for t in chunk.TileEntities:
             x = t["x"].value
