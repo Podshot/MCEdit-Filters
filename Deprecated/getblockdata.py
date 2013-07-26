@@ -1,4 +1,9 @@
 displayName = "Get Block Data"
 
 def perform(level, box, options):
-    raise Exception("Block ID: " + str(level.blockAt) + "\nBlock Data " + str(level.blockDataAt))
+    for x in xrange(box.minx, box.maxx):
+            for z in xrange(box.minz, box.maxz):
+                for y in xrange(box.miny, box.maxy):
+                    di = int(level.blockAt(x, y, z))
+                    da = int(level.blockDataAt(x, y, z))
+                    raise Exception("Block ID: " + str(di) + "\nBlock Data " + str(da))
