@@ -4,8 +4,6 @@
 # Have an idea? Can you improve this code? Fork the Github!
 # Link: https://github.com/Podshot/MCEdit-Filters
 import time # for timing
-from math import sqrt, tan, sin, cos, pi, ceil, floor, acos, atan, asin, degrees, radians, log, atan2
-from random import *
 from numpy import *
 from pymclevel import alphaMaterials
 from pymclevel import MCSchematic

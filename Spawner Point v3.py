@@ -5,7 +5,6 @@
 # Have an idea? Can you improve this code? Fork the Github!
 # Link: https://github.com/Podshot/MCEdit-Filters
 
-from pymclevel import TileEntity
 from pymclevel import TAG_List
 from pymclevel import TAG_Byte
 from pymclevel import TAG_Int
