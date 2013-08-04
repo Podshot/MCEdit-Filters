@@ -136,22 +136,32 @@ Colors = {
 	"White": "f",
 	}
 
-inputs = (
-	("Weapons & Armor", tuple(sorted(WeaponsArmor.keys()))),
+Operations = {
+	"Add Number": 0,
+	"Multiply Percentage": 1,
+	"Add Percentage": 2,
+	}
+
+
+inputs = [
+	(("Weapons & Armor", tuple(sorted(WeaponsArmor.keys()))),
 	("Consumables", tuple(sorted(Consumables.keys()))),
 	("Tools", tuple(sorted(Tools.keys()))),
 	("Custom Id", 0),
 	("Damage", 0),
 	("Count", 1),
-	("Name", ("string", "value=")),
+        ("Common","title")),
+	(("Name", ("string", "value=")),
 	("Name Color", tuple(sorted(Colors.keys()))),
 	("Name Bold", False),
 	("Name Italic", False),
-	("Lore", ("string", "value=")),
+        ("Name","title")),
+	(("Lore", ("string", "value=")),
 	("Lore Color", tuple(sorted(Colors.keys()))),
 	("Lore Bold", False),
 	("Lore Italic", False),
-	("Enchantment", tuple(sorted(Effects.keys()))),
+        ("Lore","title")),
+	(("Enchantment", tuple(sorted(Effects.keys()))),
 	("Enchant Lvl", 1),
 	("Enchantment 2", tuple(sorted(Effects.keys()))),
 	("Enchant 2 Lvl", 1),
@@ -159,7 +169,19 @@ inputs = (
 	("Enchant 3 Lvl", 1),
 	("Book Enchantment", tuple(sorted(Effects.keys()))),
 	("Book Enchant Lvl", 1),
-)
+        ("Enchant","title")),
+        (("Attribute",
+		("generic.maxHealth",
+		 "generic.followRange",
+		 "generic.attackDamage",
+		 "generic.movementSpeed",
+		 "generic.knockbackResistance",
+		 )),
+	("Operations", tuple(sorted(Operations.keys()))),
+	("Number/Percentage", 100),
+	("Label", ("string", "value=")),
+        ("Attribute","title")),
+]
 
 formatCode = unichr(167)
 
