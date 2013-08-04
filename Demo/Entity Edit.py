@@ -17,19 +17,28 @@ inputs = (
 def perform(level, box, options):
     method = "Witherer"
     print '%s: Started at %s' % (method, time.ctime())
+    # Logs in the MCEdit console when filter was started
 
     for (chunk, slices, point) in level.getChunkSlices(box):
+        #Splits the box into Minecrafts Chunk data that is found in <World Folder>/region
         for e in chunk.Entities:
+            #Looks for anything in the chunk that is a mob/entity
             if e["id"].value == "Skeleton":
-                x = e["x"].value
-                y = e["y"].value
-                z = e["z"].value
+                # Check to see if the mob/entity's Id tag matches "Skeleton"
+                x = e["Pos"][0].value
+                y = e["Pos"][1].value
+                z = e["Pos"][2].value
+                # If it does, its position is turned into variables
 
-                if x >= box.minx and x < box.maxx and y >=box.miny and y < box.maxy and z >= box.minz and z < box.maxz:
+                if (x,y,z) in box:
+                    # Checks to see if the Mob's position is in the box, so if it is not, the filter will not edit that entity
                     if "id" in e:
                         e["SkeletonType"] = TAG_Byte(1)
+                        # Changes the Skeleton Type byte to 1 (Which is the Wither Seletons Byte value
 
-                        print '%s: Started at %s' % (method, time.ctime())
+                        print '%s: Ended at %s' % (method, time.ctime())
+                        # Logs in the MCEdit console when the filter finishes
                         chunk.dirty = True
+                        #Marks the chunks that have been edited as changed
 
                 

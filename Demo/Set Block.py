@@ -5,7 +5,7 @@ import time
 displayName = "Demo Filter: Block Gen"
 
 inputs = (
-        ("Material:", alphaMaterials),
+        ("Material:", "blocktype"),
         ("A filter version of the Fill Tool", "label"),
         ("However, It will only generate blocks in the very corners of the Selection Box.", "label"),
 )
@@ -18,5 +18,6 @@ def perform(level, box, options):
     mat = (options["Material:"].ID, options["Material:"].blockData)
     setBlock(level, mat, box.minx, box.miny, box.minz)
     setBlock(level, mat, box.maxx, box.maxy, box.maxz)
+    print '%s: Ended: %s' % (method, time.ctime())
     level.markDirtyBox(box)
 
