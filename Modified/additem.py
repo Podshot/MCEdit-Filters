@@ -137,6 +137,7 @@ Colors = {
 	}
 
 Operations = {
+        "*N/A": None,
 	"Add Number": 0,
 	"Multiply Percentage": 1,
 	"Add Percentage": 2,
@@ -180,6 +181,7 @@ inputs = [
 	("Operations", tuple(sorted(Operations.keys()))),
 	("Number/Percentage", 100),
 	("Label", ("string", "value=")),
+        ("Add Attributes?", False),
         ("Attribute","title")),
 ]
 
@@ -212,6 +214,13 @@ def perform(level, box, options):
 	effect3lvl = options["Enchant 3 Lvl"]
 	bookeffect = Effects[options["Book Enchantment"]]
 	bookeffectlvl = options["Book Enchant Lvl"]
+	amount = options["Number/Percentage"]
+	operation = Operations[options["Operations"]]
+	if operation == 1 or operation == 2:
+		amount = amount / 100.0
+	attributeName = options["Attribute"]
+	name = options["Label"]
+	attribute = options["Add Attributes?"]
 	
 	if name == "-":
 		name = ""
@@ -327,7 +336,22 @@ def perform(level, box, options):
 							ef["lvl"] = TAG_Short(bookeffectlvl)
 							item["tag"]["StoredEnchantments"].append(ef)
 						
+						if attribute:
+                                                        if "tag" not in item:
+                                                                item["tag"] = TAG_Compound()
+                                                        if "AttributeModifiers" not in item["tag"]:
+                                                                item["tag"]["AttributeModifiers"] = TAG_List()
+						
+                                                        at = TAG_Compound()
+                                                        at["Amount"] = TAG_Double(amount)
+                                                        at["Operation"] = TAG_Int(operation)
+                                                        at["AttributeName"] = TAG_String(attributeName)
+                                                        at["Name"] = TAG_String(name)
+                                                        at["UUIDLeast"] = TAG_Long(randint(0,1000000000))
+                                                        at["UUIDMost"] = TAG_Long(randint(0,1000000000))
+					
+                                                        item["tag"]["AttributeModifiers"].append(at)
+
 						t["Items"].append(item)
 						chunk.dirty = True
-							
 						break
