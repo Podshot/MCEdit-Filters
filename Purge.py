@@ -18,38 +18,11 @@ import random
 
 displayName = "Purge Selected Entity"
 
-Mobs = {
-     "Bat": Bat,
-     "Blaze": Blaze,
-     "Cave Spider": CaveSpider,
-     "Chicken": Chicken,
-     "Cow": Cow,
-     "Creeper": Creeper,
-     "Ender Dragon": EnderDragon,
-     "Enderman": Enderman,
-     "Ghast": Ghast,
-     "Giant": Giant,
-     "Magma Cube": LavaSlime,
-     "Mooshroom": MushroomCow,
-     "Ocelot": Ozelot,
-     "Pig": Pig,
-     "Zombie Pigman": PigZombie,
-     "Sheep": Sheep,
-     "Silverfish": Silverfish,
-     "Skeleton": Skeleton,
-     "Slime": Slime,
-     "Snow Golem": SnowMan,
-     "Spider": Spider,
-     "Squid": Squid,
-     "Villager": Villager,
-     "Iron Golem": VillagerGolem,
-     "Witch": Witch,
-     "Wither": WitherBoss,
-     "Wolf": Wolf,
-     "Zombie": Zombie,
-     }
+Mobs = ("Creeper", "Skeleton", "WitherSkeleton", "Spider", "Giant", "Zombie", "Slime", "Ghast", "PigZombie", "Enderman", \
+	"CaveSpider", "Silverfish", "Blaze", "LavaSlime" , "EnderDragon", "WitherBoss", "Witch", "Bat", "Pig", \
+	"Sheep", "Cow", "Chicken", "Squid", "Wolf", "MushroomCow", "SnowMan", "Ozelot", "VillagerGolem", "Villager", "Horse")
 inputs = (
-        ("Mob", tuple(Mobs.keys())),
+        ("Mob", Mobs),
         ("Removes Selected Mob from Selection", "label"),
 )
 
@@ -60,11 +33,11 @@ def perform(level, box, options):
         for e in chunk.Entities:
             if e["id"].value == mob:
                # Finds any mob with the current id value
-                x = e["x"].value
-                y = e["y"].value
-                z = e["z"].value
+                x = e["Pos"][0].value
+                y = e["Pos"][1].value
+                z = e["Pos"][2].value
 
-                if x >= box.minx and x < box.maxx and y >=box.miny and y < box.maxy and z >= box.minz and z < box.maxz:
+                if (x,y,z) in box:
                     entitiesToRemove.append((chunk, e))
                     chunk.dirty = True
     for (chunk, e) in entitiesToRemove:

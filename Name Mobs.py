@@ -71,7 +71,7 @@ def perform(level, box, options):
             x = e["Pos"][0].value
             y = e["Pos"][1].value
             z = e["Pos"][2].value
-            if x >= box.minx and x < box.maxx and y >= box.miny and y < box.maxy and z >= box.minz and z < box.maxz:
+            if (x,y,z) in box:
                 e["CustomNameVisible"] = TAG_Byte(1)
                 e["CustomName"] = name
                 chunk.dirty = True

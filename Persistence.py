@@ -30,9 +30,10 @@ def perform(level, box, options):
             z = e["Pos"][2].value
             # Gets the position of the mob
 
-            if x >= box.minx and x < box.maxx and y >= box.miny and y < box.maxy and z >=box.minz and z < box.maxz:
+            if (x,y,z) in box:
                 if "Health" in e:
                         # Checks to see if the Entity has the Health tag
+                        # Checking the entity for a health tag slows down the filter though
                                         if "PersistenceRequired" not in e:
                                             e["PersistenceRequired"] = TAG_Byte()
 
