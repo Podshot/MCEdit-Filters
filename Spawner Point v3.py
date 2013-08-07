@@ -49,9 +49,9 @@ def perform(level, box, options):
     for (chunk, slices, point) in level.getChunkSlices(box):
         for e in chunk.Entities:
             if e["id"].value == "MinecartSpawner":
-                x2 = e["x"].value
-                y2 = e["y"].value
-                z2 = e["z"].value
+                x2 = e["Pos"][0].value
+                y2 = e["Pos"][1].value
+                z2 = e["Pos"][2].value
 
                 if x2 >= box.minx and x2 < box.maxx and y2 >=box.miny and y2 < box.maxy and z2 >= box.minz and z2 < box.maxz:
                     if "SpawnData" in e:
