@@ -45,7 +45,7 @@ def perform(level, box, options):
     chance = options["Chance"]
     
     length = options["Length"]
-    len_diversity = options["Length Diversity"]
+    len_diversity = options["Length Variability"]
     for x in xrange(box.minx, box.maxx):
         for z in xrange(box.minz, box.maxz):
             for y in xrange(box.miny, box.maxy):
