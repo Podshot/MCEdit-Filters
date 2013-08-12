@@ -1,15 +1,19 @@
-from pymclevel.nbt import TAG_List, TAG_Double
+from pymclevel.nbt import TAG_List, TAG_Double, TAG_Short, TAG_Compound
 
 displayName = "Spawn Here"
 
 inputs = (
     ("Spawners", True),
     ("Minecart Spawners", True),
+    ("Change Spawn Radius?", True),
+    ("Changes the Spawning Coordinates to the Spawner's current location", "label"),
 )
 
 def perform(level, box, options):
     spawner = options["Spawners"]
     mcspawner = options["Minecart Spawners"]
+    radi = options["Change Spawn Radius?"]
+    skipped = 0
 
     for (chunk, slices, point) in level.getChunkSlices(box):
         if spawner:
@@ -19,17 +23,23 @@ def perform(level, box, options):
                     tey = te["y"].value
                     tez = te["z"].value
 
-                    if (x,y,z) in box:
-                        if "SpawnData" in e:
-                            pos = te["Spawndata"]
+                    if (tex,tey,tez) in box:
+                        if "SpawnData" in te:
+                            pos = te["SpawnData"]
                             pos["Pos"] = TAG_List()
                             pos["Pos"].append(TAG_Double(tex))
                             pos["Pos"].append(TAG_Double(tey))
                             pos["Pos"].append(TAG_Double(tez))
-                            del te["SpawnPotentials"]
+                            if "SpawnPotentials" in te:
+                                del te["SpawnPotentials"]
+                            if radi:
+                                te["SpawnRange"] = TAG_Short(1)
                             chunk.dirty = True
+                        if "SpawnData" not in te:
+                            print "[Filter Message]Spawner at X:%s, Y:%s, Z:%s, was not modified!" % (tex, tey, tez)
+                            print "Because it was missing the 'SpawnData' Tag"
+                            skipped = skipped + 1
 
-    for (chunk, slices, point) in level.getChunkSlices(box):
         if mcspawner:
             for e in chunk.Entities:
                 if e["id"].value == "MinecartSpawner":
@@ -37,12 +47,22 @@ def perform(level, box, options):
                     ey = e["Pos"][1].value
                     ez = e["Pos"][2].value
 
-                    if (x,y,z) in box:
+                    if (ex,ey,ez) in box:
                         if "SpawnData" in e:
-                            pos = e["Spawndata"]
+                            pos = e["SpawnData"]
                             pos["Pos"] = TAG_List()
                             pos["Pos"].append(TAG_Double(ex))
                             pos["Pos"].append(TAG_Double(ey))
                             pos["Pos"].append(TAG_Double(ez))
-                            del te["SpawnPotentials"]
+                            if "SpawnPotentials" in e:
+                                del e["SpawnPotentials"]
+                            if radi:
+                                e["SpawnRange"] = TAG_Short(1)
                             chunk.dirty = True
+                        if "SpawnData" not in te:
+                            print "[Filter Message]Minecart Spawner at X:%s, Y:%s, Z:%s, was not modified!" % (ex, ey, ez)
+                            print "Because it was missing the 'SpawnData' Tag"
+                            skipped = skipped + 1
+        if skipped != 0:
+            raise Exception("Check Console, some Spawners were skipped!")
+                            
