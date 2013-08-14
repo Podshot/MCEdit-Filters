@@ -122,7 +122,7 @@ def setBlock(level, (block, data), x, y, z):
 
 
 def perform(level, box, options):
-    platform(level, box, options)                                        
+    platform(level, box, options)
     level.markDirtyBox(box)
 
     
@@ -135,4 +135,13 @@ def platform(level, box, options):
     mat = (options["Material:"].ID, options["Material:"].blockData)
     # Calls the function "setBlock" and provides it with its required arguments"
     setBlock(level, mat, box.minx, box.miny, box.minz)
+    disp = TAG_Compound()
+    disp["id"] = TAG_String(u'Trap')
+    disp["x"] = TAG_Int(box.minx + 7)
+    disp["y"] = TAG_Int(box.miny)
+    disp["z"] = TAG_Int(box.minz)
+    disp["Items"] = TAG_List()
+    chunk = level.getChunk(box.minx/16, box.minz/16)
+    chunk.TileEntities.append(disp)
+    chunk.dirty = True
     print '%s: Ended: %s' % (method, time.ctime())
