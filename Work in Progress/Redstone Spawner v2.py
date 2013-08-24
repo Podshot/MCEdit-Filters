@@ -36,35 +36,17 @@ inputs = (
         ("were the inupt is. Make sure the selection box is 1x1x1!", "label"),
 )
 
-
+def repeated():
+    e = MCSchematic(shape=(3,3,3),filename='')
+    e._Blocks = [[[0,0,0],[0,20,0],[0,0,0]],[[0,19,0],[20,0,20],[1,23,1]],[[0,0,0],[0,0,0],[55,93,55]]]
+    e.root_tag['Data'] = TAG_Byte_Array([[[0,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,2,0]],[[0,0,0],[0,0,0],[0,9,0]]])
+    return e
+    
 def createSchematic():
     e = MCSchematic(shape=(9,6,3),filename='')
     e._Blocks = [[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,20,0],[0,0,0,0,0,0,0,0,0]],[[0,0,0,0,0,0,0,19,0],[0,0,0,0,0,0,20,0,20],[1,0,1,0,0,1,1,23,1]],[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[93,1,93,1,75,55,55,93,55]],[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,76,1,55,0,0,0,0,0]],[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,1,55,0,0,0,0,0,0]],[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,55,0,0,0,0,0,0,0]]]
-    e.root_tag['Data'] = pymclevel.nbt.TAG_Byte_Array([[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]],[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,2,0]],[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[1,0,9,0,1,0,0,9,0]],[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,5,0,14,0,0,0,0,0]],[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,15,0,0,0,0,0,0]],[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,15,0,0,0,0,0,0,0]]])
+    e.root_tag['Data'] = TAG_Byte_Array([[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]],[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,2,0]],[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[1,0,9,0,1,0,0,9,0]],[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,5,0,14,0,0,0,0,0]],[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,15,0,0,0,0,0,0]],[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,15,0,0,0,0,0,0,0]]])
     return e
-
-def repeat(level, (block, data), x, y, z, count):
-    rep = count + 1
-    cur = 1
-    while cur != rep:
-        x = x + 9
-        level.setBlockAt(x, y, z, block)
-        level.setBlockDataAt(x, y, z, data)
-        level.setBlockAt(x+1, y, z, 23)
-        level.setBlockDataAt(x+1, y, z, 2)
-        level.setBlockAt(x+2, y, z, block)
-        level.setBlockDataAt(x+2, y, z, data)
-        level.setBlockAt(x, y+1, z, 55)
-        level.setBlockDataAt(x, y+1, z, 0)
-        level.setBlockAt(x+1, y+1, z, 93)
-        level.setBlockDataAt(x+1, y+1, z, 9)
-        level.setBlockAt(x+2, y+1, z, 55)
-        level.setBlockDataAt(x+2, y+1, z, 0)
-        level.setBlockAt(x, y, z-1, 1)
-        level.setBlockDataAt(x, y, z-1, 0)
-        level.setBlockAt(x, y, z+1, 2)
-        level.setBlockDataAt(x, y, z+1, 0)
-        
         
     
 def setBlock(level, (block, data), x, y, z):
@@ -158,10 +140,22 @@ def perform(level, box, options):
     platform(level, box, options)
     level.markDirtyBox(box)
 
-red = createSchematic()
+def repeat(level, dest, count):
+    re = count + 1
+    cur = 1
+    x = 9
+    while cur != re:
+        vec = Vector(x,-1,-2)
+        level.copyBlocksFrom(rep,rep.bounds,vec + dest)
+        x = x + 3
+        cur = cur + 1
+        
 
+        
+red = createSchematic()
+rep = repeated()
 def place(level,dest):
-    vec = Vector(0,1,-2)
+    vec = Vector(0,-1,-2)
     level.copyBlocksFrom(red,red.bounds,vec + dest)
 
 def platform(level, box, options):
@@ -173,6 +167,6 @@ def platform(level, box, options):
     place(level,[box.minx,box.miny,box.minz])
     # Calls the function "setBlock" and provides it with its required arguments"
     #setBlock(level, mat, box.minx, box.miny, box.minz)
-    #if times != 0:
-        #repeat(level, mat, box.minx, box.miny, box.minz, times)
+    if times != 0:
+        repeat(level, [box.minx,box.miny,box.minz], times)
     print '%s: Ended: %s' % (method, time.ctime())
