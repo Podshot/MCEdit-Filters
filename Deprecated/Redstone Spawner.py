@@ -24,6 +24,7 @@ displayName = "Red-Spawner"
 
 inputs = (
         ("Material:", alphaMaterials.YellowWool),
+        ("Extend amount", (0,0,10)),
         ("Made by Podshot", "label"),
         ("Change the sponge that is generated", "label"),
         ("To a spawner that spawns a spawner minecart between", "label"),
@@ -34,6 +35,30 @@ inputs = (
         ("were the inupt is. Make sure the selection box is 1x1x1!", "label"),
 )
 
+def repeat(level, (block, data), x, y, z, count):
+    rep = count + 1
+    cur = 1
+    while cur != rep:
+        x = x + 9
+        level.setBlockAt(x, y, z, block)
+        level.setBlockDataAt(x, y, z, data)
+        level.setBlockAt(x+1, y, z, 23)
+        level.setBlockDataAt(x+1, y, z, 2)
+        level.setBlockAt(x+2, y, z, block)
+        level.setBlockDataAt(x+2, y, z, data)
+        level.setBlockAt(x, y+1, z, 55)
+        level.setBlockDataAt(x, y+1, z, 0)
+        level.setBlockAt(x+1, y+1, z, 93)
+        level.setBlockDataAt(x+1, y+1, z, 9)
+        level.setBlockAt(x+2, y+1, z, 55)
+        level.setBlockDataAt(x+2, y+1, z, 0)
+        level.setBlockAt(x, y, z-1, 1)
+        level.setBlockDataAt(x, y, z-1, 0)
+        level.setBlockAt(x, y, z+1, 2)
+        level.setBlockDataAt(x, y, z+1, 0)
+        
+        
+    
 def setBlock(level, (block, data), x, y, z):
     # Credit to Abrightmoore for helping me with repeater directions
     counter = 9
@@ -133,15 +158,9 @@ def platform(level, box, options):
     AIRBLOCK = 0
     AIR = (AIRBLOCK,0)
     mat = (options["Material:"].ID, options["Material:"].blockData)
+    times = options["Extend amount"]
     # Calls the function "setBlock" and provides it with its required arguments"
     setBlock(level, mat, box.minx, box.miny, box.minz)
-    disp = TAG_Compound()
-    disp["id"] = TAG_String(u'Trap')
-    disp["x"] = TAG_Int(box.minx + 7)
-    disp["y"] = TAG_Int(box.miny)
-    disp["z"] = TAG_Int(box.minz)
-    disp["Items"] = TAG_List()
-    chunk = level.getChunk(box.minx/16, box.minz/16)
-    chunk.TileEntities.append(disp)
-    chunk.dirty = True
+    if times != 0:
+        repeat(level, mat, box.minx, box.miny, box.minz, times)
     print '%s: Ended: %s' % (method, time.ctime())
