@@ -71,7 +71,7 @@ def perform(level, box, options):
 					continue
 
 					
-				if te["id"].value == "Trap" or te["id"].value == "Chest":
+				if te["id"].value == "Trap" or te["id"].value == "Chest" or te["id"].value == "Dropper":
 					for item in te["Items"]:
 						if item["id"].value == 373:
 							if "tag" not in item:
