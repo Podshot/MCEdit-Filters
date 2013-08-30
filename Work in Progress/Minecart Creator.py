@@ -69,34 +69,35 @@ def perform(level, box, options):
 
                 level.setBlockAt(x, y, z, 0)
 
-            cart = TAG_Compound()
-            cart["Air"] = TAG_Short(300)
-            cart["FallDistance"] = TAG_Float(0)
-            cart["Fire"] = TAG_Short(-1)
-            cart["id"] = mc
-            cart["Invulnerable"] = TAG_Byte(0)
-            cart["Motion"] = TAG_List()
-            cart["Motion"].append(TAG_Double(0))
-            cart["Motion"].append(TAG_Double(-0))
-            cart["Motion"].append(TAG_Double(0))
-            cart["Pos"] = TAG_List()
-            cart["Pos"].append(TAG_Double(box.minx + 0.5))
-            cart["Pos"].append(TAG_Double(box.miny + 1))
-            cart["Pos"].append(TAG_Double(box.minz + 0.5))
-            cart["Rotation"] = TAG_List()
-	    cart["Rotation"].append(TAG_Float(0))
-	    cart["Rotation"].append(TAG_Float(0))
-            cart["CustomDisplayTile"] = TAG_Byte(1)
-            cart["DisplayTile"] = TAG_Int(block)
-            cart["DisplayData"] = TAG_Int(data)
-            cart["DisplayOffset"] = TAG_Int(height)
-	    if typ == "Spawner":
-		for tag in t:
-                    if tag not in ["id", "x", "y", "z"]:
-	    		cart[tag] = t[tag]
+                cart = TAG_Compound()
+                cart["Air"] = TAG_Short(300)
+                cart["FallDistance"] = TAG_Float(0)
+                cart["Fire"] = TAG_Short(-1)
+                cart["id"] = mc
+                cart["Invulnerable"] = TAG_Byte(0)
+                cart["Motion"] = TAG_List()
+                cart["Motion"].append(TAG_Double(0))
+                cart["Motion"].append(TAG_Double(-0))
+                cart["Motion"].append(TAG_Double(0))
+                cart["OnGround"] = TAG_Byte(1)
+                cart["Pos"] = TAG_List()
+                cart["Pos"].append(TAG_Double(box.minx + 0.5))
+                cart["Pos"].append(TAG_Double(box.miny + 1))
+                cart["Pos"].append(TAG_Double(box.minz + 0.5))
+                cart["Rotation"] = TAG_List()
+                cart["Rotation"].append(TAG_Float(0))
+                cart["Rotation"].append(TAG_Float(0))
+                cart["CustomDisplayTile"] = TAG_Byte(1)
+                cart["DisplayTile"] = TAG_Int(block)
+                cart["DisplayData"] = TAG_Int(data)
+                cart["DisplayOffset"] = TAG_Int(height)
+                if typ == "Spawner":
+                    for tag in t:
+                        if tag not in ["id", "x", "y", "z"]:
+                            cart[tag] = t[tag]
 
-            chunk.Entities.append(cart)
-            chunk.dirty = True
+                chunk.Entities.append(cart)
+                chunk.dirty = True
 				
     for (chunk, t) in tileEntitiesToRemove:
 	    chunk.TileEntities.remove(t)
