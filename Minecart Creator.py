@@ -33,8 +33,7 @@ inputs = (
     ("Block Data:", (0,0,16)),
     ("Block Height from Cart:", 0),
     ("A Height of 16 will move the block up by exactly one multiple of its height.", "label"),
-    ("Type of Cart:", tuple(carts.keys())),
-    ("This filter does not currently support Spawner-Minecarts", "label"),
+    ("Type of Cart:", tuple(sorted(carts.keys()))),
 )
 
 
