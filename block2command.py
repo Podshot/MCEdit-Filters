@@ -10,7 +10,7 @@ def perform(level, box, options):
 	 	 	for z in xrange(box.minz, box.maxz):
 	 	 	 	bid = int(level.blockAt(x, y, z))
 	 	 	 	bda = int(level.blockDataAt(x, y, z))
-	 	 	 	time.sleep(1)
+	 	 	 	time.sleep(0.5)
 	 	 	 	level.setBlockAt(x, y, z, 137)
 	 	 	 	com = "/setblock " + str(x) + " " + str(y) + " " + str(z - 1) + " " + str(bid) + " " + str(bda) + " replace"
 	 	 	 	print com
