@@ -2,8 +2,17 @@ from pymclevel import *
 import time
 
 displayName = "Block to Command"
+methods = {
+        "replace": 1,
+        "keep": 2,
+        "destroy": 3,
+}
+inputs = (
+        ("Method:" , tuple(sorted(methods.keys()))),
+        )
 
 def perform(level, box, options):
+        met = options["Method:"]
 	
 	for x in xrange(box.minx, box.maxx):
 		for y in xrange(box.miny, box.maxy):
@@ -12,7 +21,7 @@ def perform(level, box, options):
 	 	 	 	bda = int(level.blockDataAt(x, y, z))
 	 	 	 	time.sleep(0.5)
 	 	 	 	level.setBlockAt(x, y, z, 137)
-	 	 	 	com = "/setblock " + str(x) + " " + str(y) + " " + str(z - 1) + " " + str(bid) + " " + str(bda) + " replace"
+	 	 	 	com = "/setblock " + str(x) + " " + str(y) + " " + str(z - 1) + " " + str(bid) + " " + str(bda) + " " + str(met)
 	 	 	 	print com
 	 	 	 	command = TAG_Compound()
 	 	 	 	command["id"] = TAG_String("Control")
