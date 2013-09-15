@@ -48,7 +48,8 @@ inputs = (
     ("Name Bold",False),
     ("Name Itallics",False),
     ("Name Strikethrough",False),
-    ("Name Underline",False)
+    ("Name Underline",False),
+    ("Version: 1.7","label"),
 )
 
 formatChar = unichr(167)

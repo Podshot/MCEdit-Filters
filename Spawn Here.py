@@ -1,3 +1,4 @@
+1.1
 from pymclevel.nbt import TAG_List, TAG_Double, TAG_Short, TAG_Compound
 
 displayName = "Spawn Here"
@@ -7,6 +8,7 @@ inputs = (
     ("Minecart Spawners", True),
     ("Change Spawn Radius?", True),
     ("Changes the Spawning Coordinates to the Spawner's current location", "label"),
+    ("Version: 1.1","label"),
 )
 
 def perform(level, box, options):

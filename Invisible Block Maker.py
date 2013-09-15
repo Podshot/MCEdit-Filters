@@ -1,3 +1,4 @@
+1.0
 from pymclevel import TAG_Byte, TAG_Int, TAG_Float, TAG_Compound, TAG_String
 import time
 
@@ -5,6 +6,7 @@ displayName = "Invisible Wall"
 
 inputs = (
     ("These invisible blocks are full blocks, and they are un-breakable in survival", "label"),
+    ("Version: 1.0","label"),
     )
 
 def perform(level, box, options):

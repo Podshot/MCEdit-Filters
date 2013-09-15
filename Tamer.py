@@ -1,3 +1,4 @@
+1.0
 from pymclevel.nbt import TAG_Byte, TAG_String
 
 inputs = (
@@ -5,6 +6,7 @@ inputs = (
     ("Dogs", True),
     ("Horses", True),
     ("Owner Name", "string"),
+    ("Version: 1.0","label"),
     )
 
 def perform(level, box, options):

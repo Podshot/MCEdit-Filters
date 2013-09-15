@@ -1,3 +1,4 @@
+1.5
 # This is filter that changes a spawner's spawning coordinates to a sponge block in the selection
 # This filter was created by Podshot
 # If you redistribute/modify, please give credit to Podshot
@@ -26,6 +27,7 @@ displayName = "Spawner Point v3"
 inputs = (
     ("Change Spawn Radius?", False),
     ("Replaces the Spawning Coordinates to a Sponge block in the Selection box.", "label"),
+    ("Version: 1.5","label"),
 )
 
 

@@ -1,3 +1,4 @@
+1.3
 # This filter makes any mob in the selection box persistent
 # This was created by Podshot
 # If you modify this filter, please give credit to Podshot
@@ -20,6 +21,7 @@ displayName = "Make Mobs Persistent"
 
 inputs = (
         ("Makes any mobs in the Selection Box Persistent", "label"),
+        ("Version: 1.3","label"),
 )
 # The user can't interact with that input, its great for giving extra info
 def perform(level, box, options):

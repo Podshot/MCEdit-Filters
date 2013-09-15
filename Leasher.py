@@ -1,4 +1,4 @@
-
+1.1
 
 from pymclevel import TAG_List
 from pymclevel import TAG_Byte
@@ -17,6 +17,7 @@ inputs = (
     ("Entity #1 Name:", "string"),
     ("Entity #2 Name:", "string"),
     ("Remove Entity's Names", True),
+    ("Version: 1.1", "label"),
     )
 
 def perform(level, box, options):

@@ -1,3 +1,4 @@
+1.4
 # This filter removes the selected entity
 # This was created by Podshot
 # If you modify this filter, please give credit to Podshot
@@ -24,6 +25,7 @@ Mobs = ("Creeper", "Skeleton", "WitherSkeleton", "Spider", "Giant", "Zombie", "S
 inputs = (
         ("Mob", Mobs),
         ("Removes Selected Mob from Selection", "label"),
+        ("Version: 1.4","label"),
 )
 
 def perform(level, box, options):
