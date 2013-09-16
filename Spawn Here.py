@@ -1,4 +1,3 @@
-1.1
 from pymclevel.nbt import TAG_List, TAG_Double, TAG_Short, TAG_Compound
 
 displayName = "Spawn Here"

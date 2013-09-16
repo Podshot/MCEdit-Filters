@@ -1,4 +1,3 @@
-1.1
 displayName = "Get Block Data"
 
 inputs = (

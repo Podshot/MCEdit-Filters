@@ -1,4 +1,3 @@
-1.0
 from pymclevel.nbt import TAG_Byte, TAG_String
 
 inputs = (

@@ -1,5 +1,3 @@
-1.0
-
 from pymclevel.nbt import TAG_List
 
 displayName = "Clear Items"

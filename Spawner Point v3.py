@@ -1,4 +1,3 @@
-1.5
 # This is filter that changes a spawner's spawning coordinates to a sponge block in the selection
 # This filter was created by Podshot
 # If you redistribute/modify, please give credit to Podshot

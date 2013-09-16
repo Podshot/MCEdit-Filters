@@ -1,4 +1,3 @@
-1.0
 from pymclevel import TAG_String
 import time
 

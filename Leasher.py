@@ -1,5 +1,3 @@
-1.1
-
 from pymclevel import TAG_List
 from pymclevel import TAG_Byte
 from pymclevel import TAG_Int

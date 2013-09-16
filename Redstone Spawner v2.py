@@ -1,4 +1,3 @@
-1.2
 # This filter creates Traz-Landers Redstone Controlled Spawner Layout
 # This was created by Podshot
 # If you modify this filter, please give credit to Podshot

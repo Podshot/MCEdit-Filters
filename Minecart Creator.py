@@ -1,4 +1,3 @@
-1.6
 # This is filter that creates a custom minecart in the selection box
 # This filter was created by Podshot
 # If you redistribute/modify, please give credit to Podshot

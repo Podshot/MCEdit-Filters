@@ -1,4 +1,3 @@
-1.0
 from pymclevel import TAG_Byte, TAG_Int, TAG_Float, TAG_Compound, TAG_String
 import time
 

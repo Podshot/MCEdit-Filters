@@ -1,4 +1,3 @@
-1.3
 # This filter makes any mob in the selection box persistent
 # This was created by Podshot
 # If you modify this filter, please give credit to Podshot
