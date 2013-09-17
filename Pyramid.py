@@ -6,38 +6,39 @@ import time
 displayName = "Pyramid Maker"
 
 inputs = (
-    ("Levels", (2,2,10)),
+    ("Block:", "blockytpe"),
+    ("Levels", (2,2,1data)),
     ("Box must be 1x1x1!","label"),
     )
 
-def lvl1():
+def lvl1(block, data):
     e = MCSchematic(shape=(3,1,3),filename='')
-    e._Blocks = [[[19,19,19],[19,19,19],[19,19,19]]]
-    e.root_tag['Data'] = TAG_Byte_Array([[[0,0,0],[0,0,0],[0,0,0]]])
+    e._Blocks = [[[block,block,block],[block,block,block],[block,block,block]]]
+    e.root_tag['Data'] = TAG_Byte_Array([[[data,data,data],[data,data,data],[data,data,data]]])
     return e
 
 def lvl2():
     e = MCSchematic(shape=(5,1,5),filename='')
-    e._Blocks = [[[19,19,19,19,19],[19,19,19,19,19],[19,19,19,19,19],[19,19,19,19,19],[19,19,19,19,19]]]
-    e.root_tag['Data'] = TAG_Byte_Array([[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]])
+    e._Blocks = [[[block,block,block,block,block],[block,block,block,block,block],[block,block,block,block,block],[block,block,block,block,block],[block,block,block,block,block]]]
+    e.root_tag['Data'] = TAG_Byte_Array([[[data,data,data,data,data],[data,data,data,data,data],[data,data,data,data,data],[data,data,data,data,data],[data,data,data,data,data]]])
     return e
 
 def lvl3():
     e = MCSchematic(shape=(7,1,7),filename='')
-    e._Blocks = [[[19,19,19,19,19,19,19],[19,19,19,19,19,19,19],[19,19,19,19,19,19,19],[19,19,19,19,19,19,19],[19,19,19,19,19,19,19],[19,19,19,19,19,19,19],[19,19,19,19,19,19,19]]]
-    e.root_tag['Data'] = TAG_Byte_Array([[[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]]])
+    e._Blocks = [[[block,block,block,block,block,block,block],[block,block,block,block,block,block,block],[block,block,block,block,block,block,block],[block,block,block,block,block,block,block],[block,block,block,block,block,block,block],[block,block,block,block,block,block,block],[block,block,block,block,block,block,block]]]
+    e.root_tag['Data'] = TAG_Byte_Array([[[data,data,data,data,data,data,data],[data,data,data,data,data,data,data],[data,data,data,data,data,data,data],[data,data,data,data,data,data,data],[data,data,data,data,data,data,data],[data,data,data,data,data,data,data],[data,data,data,data,data,data,data]]])
     return e
 
 def lvl4():
-    e = MCSchematic(shape=(7,1,7),filename='')
-    e._Blocks = [[[19,19,19,19,19,19,19],[19,19,19,19,19,19,19],[19,19,19,19,19,19,19],[19,19,19,19,19,19,19],[19,19,19,19,19,19,19],[19,19,19,19,19,19,19],[19,19,19,19,19,19,19]]]
-    e.root_tag['Data'] = TAG_Byte_Array([[[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]]])
+    e = MCSchematic(shape=(9,1,9),filename='')
+    e._Blocks = [[[block,block,block,block,block,block,block,block,block],[block,block,block,block,block,block,block,block,block],[block,block,block,block,block,block,block,block,block],[block,block,block,block,block,block,block,block,block],[block,block,block,block,block,block,block,block,block],[block,block,block,block,block,block,block,block,block],[block,block,block,block,block,block,block,block,block],[block,block,block,block,block,block,block,block,block],[block,block,block,block,block,block,block,block,block]]]
+    e.root_tag['Data'] = TAG_Byte_Array([[[data,data,data,data,data,data,data,data,data],[data,data,data,data,data,data,data,data,data],[data,data,data,data,data,data,data,data,data],[data,data,data,data,data,data,data,data,data],[data,data,data,data,data,data,data,data,data],[data,data,data,data,data,data,data,data,data],[data,data,data,data,data,data,data,data,data],[data,data,data,data,data,data,data,data,data],[data,data,data,data,data,data,data,data,data]]])
     return e
 
 def lvl5():
     e = MCSchematic(shape=(9,1,9),filename='')
-    e._Blocks = [[[19,19,19,19,19,19,19,19,19],[19,19,19,19,19,19,19,19,19],[19,19,19,19,19,19,19,19,19],[19,19,19,19,19,19,19,19,19],[19,19,19,19,19,19,19,19,19],[19,19,19,19,19,19,19,19,19],[19,19,19,19,19,19,19,19,19],[19,19,19,19,19,19,19,19,19],[19,19,19,19,19,19,19,19,19]]]
-    e.root_tag['Data'] = TAG_Byte_Array([[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]]])
+    e._Blocks = [[[block,block,block,block,block,block,block,block,block],[block,block,block,block,block,block,block,block,block],[block,block,block,block,block,block,block,block,block],[block,block,block,block,block,block,block,block,block],[block,block,block,block,block,block,block,block,block],[block,block,block,block,block,block,block,block,block],[block,block,block,block,block,block,block,block,block],[block,block,block,block,block,block,block,block,block],[block,block,block,block,block,block,block,block,block]]]
+    e.root_tag['Data'] = TAG_Byte_Array([[[data,data,data,data,data,data,data,data,data],[data,data,data,data,data,data,data,data,data],[data,data,data,data,data,data,data,data,data],[data,data,data,data,data,data,data,data,data],[data,data,data,data,data,data,data,data,data],[data,data,data,data,data,data,data,data,data],[data,data,data,data,data,data,data,data,data],[data,data,data,data,data,data,data,data,data],[data,data,data,data,data,data,data,data,data]]])
     return e
 
 def lvl6():
@@ -55,44 +56,33 @@ def lvl9():
 def lvl10():
     print "Not Used"
 
-l1 = lvl1()
-l2 = lvl2()
-l3 = lvl3()
-l4 = lvl4()
-l5 = lvl5()
-l6 = lvl6()
-l7 = lvl7()
-l8 = lvl8()
-l9 = lvl9()
-l10 = lvl10()
-
-def levelOne(level, dest):
-    vec = Vector(0,-1,0)
-    level.copyBlocksFrom(l1,l1.bounds,vec + dest)
+def levelOne(level, dest, block, data):
+    vec = Vector(-1,-1,-1)
+    level.copyBlocksFrom(lvl1(block),lvl1(data).bounds,vec + dest)
 
 def levelTwo(level, dest, box):
-    vec = Vector(0,-2,0)
-    level.copyBlocksFrom(l2,l2.bounds,vec + dest)
+    vec = Vector(-2,-2,-2)
+    level.copyBlocksFrom(lvl2(block),lvl2(data).bounds,vec + dest)
     level.markDirtyBox(box)
-    levelOne(level, dest)
+    levelOne(level, dest, block, data)
 
-def levelThree(level, dest, box):
-    vec = Vector(0,-3,0)
-    level.copyBlocksFrom(l3,l3.bounds,vec + dest)
+def levelThree(level, dest, box, block, data):
+    vec = Vector(-3,-3,-3)
+    level.copyBlocksFrom(lvl3(block),lvl3(data).bounds,vec + dest)
     level.markDirtyBox(box)
-    levelTwo(level, dest, box)
+    levelTwo(level, dest, box, block, data)
 
-def levelFour(level, dest, box):
-    vec = Vector(0,-4,0)
-    level.copyBlocksFrom(l4,l4.bounds,vec + dest)
+def levelFour(level, dest, box, block, data):
+    vec = Vector(-4,-4,-4)
+    level.copyBlocksFrom(lvl4(block),lvl4(data).bounds,vec + dest)
     level.markDirtyBox(box)
-    levelThree(level, dest, box)
+    levelThree(level, dest, box, block, data)
 
-def levelFive(level, dest, box):
-    vec = Vector(0,-5,0)
-    level.coptBlocksFrom(l5,l5.bounds,vec + dest)
+def levelFive(level, dest, box, block, data):
+    vec = Vector(-5,-5,-5)
+    level.copyBlocksFrom(lvl5(block),lvl5(data).bounds,vec + dest)
     level.markDirtyBox(box)
-    levelFour(level, dest, box)
+    levelFour(level, dest, box, block, data)
 
 
 
@@ -105,6 +95,8 @@ def levelFive(level, dest, box):
 
 
 def perform(level, box, options):
+    blid = options["Block:"].ID
+    blda = optiond["Block:"].blockData
     levels = options["Levels"]
     boxx = box.maxx - box.minx
     boxy = box.maxy - box.miny
@@ -115,21 +107,21 @@ def perform(level, box, options):
         raise Exception("Box must be 1x1x1!")
     if boxz != 1:
         raise Exception("Box must be 1x1x1!")
-    level.setBlockAt(box.minx, box.miny, box.minz, 19)
-    level.setBlockDataAt(box.minx, box.miny, box.minz, 0)
+    level.setBlockAt(box.minx, box.miny, box.minz, blid)
+    level.setBlockDataAt(box.minx, box.miny, box.minz, blda)
     if levels == 2:
-        levelOne(level,[box.minx,box.miny,box.minz])
+        levelOne(level,[box.minx,box.miny,box.minz], blid, blda)
         level.markDirtyBox(box)
     if levels == 3:
-        levelTwo(level,[box.minx,box.miny,box.minz], box)
+        levelTwo(level,[box.minx,box.miny,box.minz], box, blid, blda )
         level.markDirtyBox(box)
     if levels == 4:
-        levelThree(level,[box.minx,box.miny,box.minz], box)
+        levelThree(level,[box.minx,box.miny,box.minz], box, blid, blda)
         level.markDirtyBox(box)
     if levels == 5:
-        levelFour(level,[box.minx,box.miny,box.minz], box)
+        levelFour(level,[box.minx,box.miny,box.minz], box, blid, blda)
         level.markDirtyBox(box)
     if levels == 6:
-        levelFive(level,[box.minx,box.miny,box.minz], box)
+        levelFive(level,[box.minx,box.miny,box.minz], box, blid, blda)
         level.markDirtyBox(box)
     
