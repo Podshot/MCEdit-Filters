@@ -14,7 +14,7 @@ def perform(level, box, options):
             if x >= box.minx and x < box.maxx and y >= box.miny and y < box.maxy and z >= box.minz and z < box.maxz:
                 # we're only looking for chests, so we need to check if this is a chest.
                 # Tile Entity IDs can be found at minecraftwiki.net on page Chunk Format
-                if tileEntity["id"] == "Chest":
+                if tileEntity["id"].value == "Chest":
                     # Now, we can do 3 things: add an item to the chest, edit the existing item, delete the existing item.
                     # ----------------------------------------------------------------------------------------------------
                     # 1.) Add an item
