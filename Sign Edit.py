@@ -1,5 +1,6 @@
 from pymclevel.nbt import TAG_String
 import re
+import time
 
 inputs = [
     (("Place Lines on signs", True),
@@ -12,6 +13,7 @@ inputs = [
     ("Sign Line #4:", "string"),
     ("Sign Text","title"),),
     (("Filter Word #1:", "string"),
+    ("Replace Word #1:", "string"),
     ("Replace Word #2:", "string"),
     ("Filter Word #2:", "string"),
     ("Replace Word #3:", "string"),
@@ -21,6 +23,13 @@ inputs = [
     ("Replace Word #4:", "string"),
     ("Word Filtering","title"),),
     ]
+
+def replaceword(string, word1, word2, word3, word4, replace1, replace2, replace3, replace4):
+    string = string.replace(word1, replace1)
+    string = string.replace(word2, replace2)
+    string = string.replace(word3, replace3)
+    string = string.replace(word4, replace4)
+    return string
 
 def perform(level, box, options):
     PLOS = options["Place Lines on signs"]
@@ -46,8 +55,8 @@ def perform(level, box, options):
         return
 
     for (chunk, slices, point) in level.getChunkSlices(box):
-        for t in chunk.Entities:
-            if t["id"].value = "Sign":
+        for t in chunk.TileEntities:
+            if t["id"].value == "Sign":
                 x = t["x"].value
                 y = t["y"].value
                 z = t["z"].value
@@ -65,30 +74,11 @@ def perform(level, box, options):
                         chunk.dirty = True
 
                     if FL:
-                        SignLine1 = t["Text1"].value
-                        SignLine2 = t["Text2"].value
-                        SignLine3 = t["Text3"].value
-                        SignLine4 = t["Text4"].value
-                        SignLine1.replace(FW1, RW1)
-                        SignLine1.replace(FW2, RW2)
-                        SignLine1.replace(FW3, RW3)
-                        SignLine1.replace(FW4, RW4)
-                        SignLine2.replace(FW1, RW1)
-                        SignLine2.replace(FW2, RW2)
-                        SignLine2.replace(FW3, RW3)
-                        SignLine2.replace(FW4, RW4)
-                        SignLine3.replace(FW1, RW1)
-                        SignLine3.replace(FW2, RW2)
-                        SignLine3.replace(FW3, RW3)
-                        SignLine3.replace(FW4, RW4)
-                        SignLine4.replace(FW1, RW1)
-                        SignLine4.replace(FW2, RW2)
-                        SignLine4.replace(FW3, RW3)
-                        SignLine4.replace(FW4, RW4)
-                        t["Text1"] = TAG_String(SignLine1)
-                        t["Text2"] = TAG_String(SignLine2)
-                        t["Text3"] = TAG_String(SignLine3)
-                        t["Text4"] = TAG_String(SignLine4)
+                        time.sleep(0.5)
+                        t["Text1"] = TAG_String(replaceword(Line1, FW1, FW2, FW3, FW4, RW1, RW2, RW3, RW4))
+                        t["Text2"] = TAG_String(replaceword(Line2, FW1, FW2, FW3, FW4, RW1, RW2, RW3, RW4))
+                        t["Text3"] = TAG_String(replaceword(Line3, FW1, FW2, FW3, FW4, RW1, RW2, RW3, RW4))
+                        t["Text4"] = TAG_String(replaceword(Line4, FW1, FW2, FW3, FW4, RW1, RW2, RW3, RW4))
                         chunk.dirty = True
                         
                         
