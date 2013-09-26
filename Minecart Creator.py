@@ -99,7 +99,7 @@ def perform(level, box, options):
                         if tag not in ["id", "x", "y", "z"]:
                             cart[tag] = t[tag]
                 if typ == "MinecartCommandBlock":
-                    if level.blockAt(box.minx, box.miny, box.minz) == 137:
+                    if t["id"] == "Control":
                         cart["Command"] = t["Command"]
                         cart["CustomName"] = t["CustomName"]
                         
