@@ -32,6 +32,7 @@ def replaceword(string, word1, word2, word3, word4, replace1, replace2, replace3
     return string
 
 def perform(level, box, options):
+    # Start Input gathering
     PLOS = options["Place Lines on signs"]
     FL = options["Filter Words"]
     SL1 = options["Sign Line #1:"]
@@ -46,6 +47,7 @@ def perform(level, box, options):
     RW2 = options["Replace Word #2:"]
     RW3 = options["Replace Word #3:"]
     RW4 = options["Replace Word #4:"]
+    # End input gathering
 
     if PLOS and FL:
         raise Exception("Cannot Place Lines on sign and Filter Words \nIn the same filter run!")
