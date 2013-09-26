@@ -103,7 +103,6 @@ def perform(level, box, options):
                         cart["Command"] = t["Command"]
                         cart["CustomName"] = t["CustomName"]
                         
-
                 chunk.Entities.append(cart)
                 chunk.dirty = True
 				
