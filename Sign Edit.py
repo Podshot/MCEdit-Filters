@@ -25,6 +25,7 @@ inputs = [
     ]
 
 def replaceword(string, word1, word2, word3, word4, replace1, replace2, replace3, replace4):
+    # Uses python's replace function and iterates for each keyword and replace word
     string = string.replace(word1, replace1)
     string = string.replace(word2, replace2)
     string = string.replace(word3, replace3)
