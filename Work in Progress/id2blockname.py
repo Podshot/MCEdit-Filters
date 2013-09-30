@@ -1,7 +1,29 @@
 from pymclevel.nbt import *
 
 def num2str(string):
-
+    popped = string.pop(4)
+    popped2 = string.pop(4)
+    popped3 = string.pop(4)
+    if popped == '0':
+        string.append('air')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '1':
+        string.append('stone')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '2':
+        string.append('grass_block')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '3':
+        string.append('dirt')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '4':
+        string.append('cobblestone')
+        string.append(popped2)
+        string.append(popped3)
     return string
 
 def perform(level, box, options):
@@ -15,6 +37,7 @@ def perform(level, box, options):
 
                 if (x,y,z) in box:
                     command = t["Command"]
+                    command = command.split()
                     new_command = num2str(command)
                     t["Command"] = TAG_String(new_command)
 
