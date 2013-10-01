@@ -120,6 +120,260 @@ def num2str(string):
         string.append('minecraft:golden_rail')
         string.append(popped2)
         string.append(popped3)
+    if popped == '28':
+        string.append('minecraft:dectector_rail')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '29':
+        string.append('minecraft:sticky_piston')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '30':
+        string.append('minecraft:web')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '31':
+        string.append('minecraft:tallgrass')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '32':
+        string.append('minecraft:deadbush')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '33':
+        string.append('minecraft:piston')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '34':
+        string.append('minecraft:piston_head')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '35':
+        string.append('minecraft:wool')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '36':
+        string.append('minecraft:piston_extension')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '37':
+        string.append('minecraft:yellow_flower')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '38':
+        string.append('minecraft:red_flower')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '39':
+        string.append('minecraft:brown_mushroom')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '40':
+        string.append('minecraft:red_mushroom')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '41':
+        string.append('minecraft:gold_block')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '42':
+        string.append('minecraft:iron_block')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '43':
+        string.append('minecraft:double_stone_slab')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '44':
+        string.append('minecraft:stone_slab')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '45':
+        string.append('minecraft:brick_block')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '46':
+        string.append('minecraft:tnt')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '47':
+        string.append('minecraft:bookshelf')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '48':
+        string.append('minecraft:mossy_cobblestone')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '49':
+        string.append('minecraft:obsidian')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '50':
+        string.append('minecraft:torch')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '51':
+        string.append('minecraft:fire')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '52':
+        string.append('minecraft:mob_spawner')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '53':
+        string.append('minecraft:oak_stairs')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '54':
+        string.append('minecraft:chest')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '55':
+        string.append('minecraft:redstone_wire')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '56':
+        string.append('minecraft:diamond_ore')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '57':
+        string.append('minecraft:diamond_block')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '58':
+        string.append('minecraft:crafting_table')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '59':
+        string.append('minecraft:wheat')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '60':
+        string.append('minecraft:farmland')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '61':
+        string.append('minecraft:furnace')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '62':
+        string.append('minecraft:lit_furnace')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '63':
+        string.append('minecraft:standing_sign')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '64':
+        string.append('minecraft:wooden_door')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '65':
+        string.append('minecraft:ladder')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '66':
+        string.append('minecraft:rail')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '67':
+        string.append('minecraft:stone_stairs')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '68':
+        string.append('minecraft:wall_sign')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '69':
+        string.append('minecraft:lever')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '70':
+        string.append('minecraft:stone_pressure_plate')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '71':
+        string.append('minecraft:iron_door')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '72':
+        string.append('minecraft:wooden_pressuer_plate')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '73':
+        string.append('minecraft:redstone_ore')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '74':
+        string.append('minecraft:lit_redstone_ore')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '75':
+        string.append('minecraft:unlit_redstone_torch')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '76':
+        string.append('minecraft:redstone_torch')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '77':
+        string.append('minecraft:stone_button')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '78':
+        string.append('minecraft:snow_layer')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '79':
+        string.append('minecraft:ice')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '80':
+        string.append('minecraft:snow')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '81':
+        string.append('minecraft:cactus')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '82':
+        string.append('minecraft:clay')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '83':
+        string.append('minecraft:reeds')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '84':
+        string.append('minecraft:jukebox')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '85':
+        string.append('minecraft:fence')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '86':
+        string.append('minecraft:pumpkin')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '87':
+        string.append('minecraft:netherrack')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '88':
+        string.append('minecraft:soul_sand')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '89':
+        string.append('minecraft:glowstone')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '90':
+        string.append('minecraft:portal')
+        string.append(popped2)
+        string.append(popped3)
+    
+    
     return string
 
 def perform(level, box, options):
