@@ -372,8 +372,110 @@ def num2str(string):
         string.append('minecraft:portal')
         string.append(popped2)
         string.append(popped3)
-    
-    
+    if popped == '91':
+        string.append('minecraft:lit_pumpkin')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '92':
+        string.append('minecraft:cake')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '93':
+        string.append('minecraft:unpowered_repeater')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '94':
+        string.append('minecraft:powered_repeater')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '95':
+        string.append('minecraft:chest_locked_aprilfools_super_old_legacy_we_should_not_even_have_this')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '96':
+        string.append('minecraft:trapdoor')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '97':
+        string.append('minecraft:monster_egg')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '98':
+        string.append('minecraft:stonebrick')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '99':
+        string.append('minecraft:brown_mushroom_block')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '100':
+        string.append('minecraft:red_mushroom_block')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '101':
+        string.append('minecraft:iron_bars')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '102':
+        string.append('minecraft:glass_pane')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '103':
+        string.append('minecraft:melon_block')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '104':
+        string.append('minecraft:pumpkin_stem')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '105':
+        string.append('minecraft:melon_stem')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '106':
+        string.append('minecraft:vine')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '107':
+        string.append('minecraft:fence_gate')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '108':
+        string.append('minecraft:brick_stairs')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '109':
+        string.append('minecraft:stone_brick_stairs')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '110':
+        string.append('minecraft:mycelium')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '111':
+        string.append('minecraft:waterlily')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '112':
+        string.append('minecraft:nether_brick')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '113':
+        string.append('minecraft:nether_brick_fence')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '114':
+        string.append('minecraft:nether_brick_stairs')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '115':
+        string.append('nether_wart')
+        string.append(popped2)
+        string.append(popped3)
+    if popped == '116':
+        string.append('minecraft:enchanting_table')
+        string.append(popped2)
+        string.append(popped3)
     return string
 
 def perform(level, box, options):
