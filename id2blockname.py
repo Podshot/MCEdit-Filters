@@ -524,262 +524,327 @@ def num2str(string):
         string.append('minecraft:iron_bars')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '102':
         string.append('minecraft:glass_pane')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '103':
         string.append('minecraft:melon_block')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '104':
         string.append('minecraft:pumpkin_stem')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '105':
         string.append('minecraft:melon_stem')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '106':
         string.append('minecraft:vine')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '107':
         string.append('minecraft:fence_gate')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '108':
         string.append('minecraft:brick_stairs')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '109':
         string.append('minecraft:stone_brick_stairs')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '110':
         string.append('minecraft:mycelium')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '111':
         string.append('minecraft:waterlily')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '112':
         string.append('minecraft:nether_brick')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '113':
         string.append('minecraft:nether_brick_fence')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '114':
         string.append('minecraft:nether_brick_stairs')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '115':
         string.append('nether_wart')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '116':
         string.append('minecraft:enchanting_table')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '117':
         string.append('minecraft:brewing_stand')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '118':
         string.append('minecraft:cauldron')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '119':
         string.append('minecraft:end_portal')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '120':
         string.append('minecraft:end_portal_frame')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '121':
         string.append('minecraft:end_stone')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '122':
         string.append('minecraft:dragon_egg')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '123':
         string.append('minecraft:redstone_lamp')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '124':
         string.append('minecraft:lit_redstone_lamp')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '125':
         string.append('minecraft:double_wooden_slab')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '126':
         string.append('minecraft:wooden_slab')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '127':
         string.append('minecraft:cocoa')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '128':
         string.append('minecraft:sandstone_stairs')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '129':
         string.append('minecraft:emerald_ore')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '130':
         string.append('minecraft:ender_chest')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '131':
         string.append('minecraft:tripwire_hook')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '132':
         string.append('minecraft:tripwire')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '133':
         string.append('minecraft:emerald_block')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '134':
         string.append('minecraft:spruce_stairs')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '135':
         string.append('minecraft:birch_stairs')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '136':
         string.append('minecraft:jungle_stairs')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '137':
         string.append('minecraft:command_block')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '138':
         string.append('minecraft:beacon')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '139':
         string.append('minecraft:cobblestone_wall')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '140':
         string.append('minecraft:flower_pot')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '141':
         string.append('minecraft:carrots')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '142':
         string.append('minecraft:potatoes')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '143':
         string.append('minecraft:wooden_button')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '144':
         string.append('minecraft:skull')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '145':
         string.append('minecraft:anvil')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '146':
         string.append('minecraft:trapped_chest')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '147':
         string.append('minecraft:light_weighted_pressure_plate')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '148':
         string.append('minecraft:heavy_weighted_pressure_plate')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '149':
         string.append('minecraft:unpowered_comarator')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '150':
         string.append('minecraft:powered_comparator')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '151':
         string.append('minecraft:daylight_detector')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '152':
         string.append('minecraft:redstone_block')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '153':
         string.append('minecraft:quartz_ore')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '154':
         string.append('minecraft:hopper')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '155':
         string.append('minecraft:quartz_block')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '156':
         string.append('minecraft:quartz_stairs')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '157':
         string.append('minecraft:activator_rail')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '158':
         string.append('minecraft:dropper')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '159':
         string.append('minecraft:stained_hardened_clay')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '170':
         string.append('minecraft:hay_block')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '171':
         string.append('minecraft:carpet')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '172':
         string.append('minecraft:hardened_clay')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '173':
         string.append('minecraft:coal_block')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '174':
         string.append('minecraft:packed_ice')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     if popped == '175':
         string.append('minecraft:double_plant')
         string.append(popped2)
         string.append(popped3)
+        string.append(popped4)
     return string
 
 def perform(level, box, options):
