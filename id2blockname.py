@@ -858,7 +858,7 @@ def perform(level, box, options):
 
                 if (x,y,z) in box:
                     command = t["Command"].value
-                    if command.startswith("/setblock") or command.startwith("/testforblock") or command.startswith("setblock") or command.startswith("testforblock"):
+                    if command.startswith("/setblock") or command.startswith("/testforblock") or command.startswith("setblock") or command.startswith("testforblock"):
                         command = command.split()
                         new_command = num2str(command)
                         new_command = ' '.join(new_command)
