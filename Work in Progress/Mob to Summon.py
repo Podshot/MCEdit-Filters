@@ -37,7 +37,7 @@ def perform(level, box, options):
                 control["z"] = TAG_Int(box.maxz)
                 control["CustomName"] = TAG_String("@")
                 control["TrackOutput"] = TAG_Byte(1)
-                control["SuccesCount"] = TAG_Int(0)
+                control["SuccessCount"] = TAG_Int(0)
                 chunk.TileEntities.append(control)
                 chunk.dirty = True
                 
