@@ -24,17 +24,20 @@ def perform(level, box, options):
                 # Start gathering mob info
                 mid = e["id"].value
                 # End gathering mob info
+                new_x = int(x)
+                new_y = int(y)
+                new_z = int(z)
                 com = "/summon "+ mid +" ~ ~ ~"
                 print com
-                level.setBlockAt(box.maxx, box.maxy, box.maxz, 137)
-                level.setBlockDataAt(box.maxx, box.maxy, box.maxz, 0)
+                level.setBlockAt(new_x, new_y, new_z, 137)
+                level.setBlockDataAt(new_x, new_y, new_z, 0)
 
                 control = TAG_Compound()
                 control["id"] = TAG_String("Control")
                 control["Command"] = TAG_String(com)
-                control["x"] = TAG_Int(box.maxx)
-                control["y"] = TAG_Int(box.maxy)
-                control["z"] = TAG_Int(box.maxz)
+                control["x"] = TAG_Int(new_x)
+                control["y"] = TAG_Int(new_y)
+                control["z"] = TAG_Int(new_z
                 control["CustomName"] = TAG_String("@")
                 control["TrackOutput"] = TAG_Byte(1)
                 control["SuccessCount"] = TAG_Int(0)
