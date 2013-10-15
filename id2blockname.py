@@ -15,6 +15,7 @@ def num2str(string):
         popped4 = string.pop(4)
     except IndexError:
         popped4 = ''
+        pass
     if popped == '0':
         string.append('minecraft:air')
         string.append(popped2)
