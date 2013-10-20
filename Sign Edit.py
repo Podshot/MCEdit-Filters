@@ -69,6 +69,14 @@ def perform(level, box, options):
                     Line2 = t["Text2"].value
                     Line3 = t["Text3"].value
                     Line4 = t["Text4"].value
+                    if Line1 != "":
+                        SL1 = Line1
+                    if Line2 != "":
+                        SL2 = Line2
+                    if Line3 != "":
+                        SL3 = Line3
+                    if Line4 != "":
+                        SL4 = Line4
                     if PLOS:
                         t["Text1"] = TAG_String(SL1)
                         t["Text2"] = TAG_String(SL2)
