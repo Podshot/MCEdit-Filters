@@ -40,16 +40,16 @@ colors = {
 	"Pink": "d",
 	"Yellow": "e",
 	}
-displayName = "Rename Mobs"
+displayName = "Name Mobs"
 
 inputs = (
     ("Name",("string","value=")),
     ("Name Color",tuple(sorted(colors.keys()))),
-    ("Name Bold",False),
-    ("Name Itallics",False),
-    ("Name Strikethrough",False),
-    ("Name Underline",False),
-    ("Version: 1.7","label"),
+    ("Name Bold", False),
+    ("Name Itallics", False),
+    ("Name Strikethrough", False),
+    ("Name Underline", False),
+    ("Version: 1.8","label")
 )
 
 formatChar = unichr(167)
