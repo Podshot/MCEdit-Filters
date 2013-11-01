@@ -492,7 +492,7 @@ def num2str(string):
         string.append(popped3)
         string.append(popped4)
     if popped == '95':
-        string.append('minecraft:chest_locked_aprilfools_super_old_legacy_we_should_not_even_have_this')
+        string.append('minecraft:stained_glass')
         string.append(popped2)
         string.append(popped3)
         string.append(popped4)
