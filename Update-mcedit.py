@@ -38,6 +38,7 @@ def createrestart(operation, path):
         contents.append("timeout /t 10 /nobreak >nul\n")
         contents.append("xcopy " + '"' + str(path) + "\\temp" + '"' + " " + '"' + str(path) + '"' + " /E /V /Y\n")
         contents.append("start mcedit.exe\n")
+        contents.append("PAUSE")
         contents.append("EXIT\n")
         with open(str(path) + "/" + "restart.bat", "w") as f:
             f.writelines(contents)
@@ -65,7 +66,10 @@ def perform(level, box, options):
         os.chdir('..')
         mce_path2 = str(os.getcwd())
         print mce_path2
-        os.mkdir("temp")
+        try:
+            os.mkdir("temp")
+        except OSError:
+            pass
         if _platform == "darwin":
             createrestart("OS X", str(mce_path2))
         if _platform == "win32":
@@ -76,17 +80,17 @@ def perform(level, box, options):
                 if the_bit == "32-Bit":
                     name = "MCEdit-0.1.7.1.win32.zip"
                     url = "https://bitbucket.org/codewarrior0/mcedit/downloads/MCEdit-0.1.7.1.win32.zip"
-                    new_mcedit = urllib.urlretrieve(url, "MCEdit-0.1.7.1.win32.zip")
+                    urllib.urlretrieve(url, "MCEdit-0.1.7.1.win32.zip")
                     unzip(name, mce_path2)
                 if the_bit == "64-Bit":
                     name = "MCEdit-0.1.7.1.win-amd64.zip"
                     url = "https://bitbucket.org/codewarrior0/mcedit/downloads/MCEdit-0.1.7.1.win-amd64.zip"
-                    new_mcedit = urllib.urlretrieve(url, "MCEdit-0.1.7.1.win-amd64.zip")
+                    urllib.urlretrieve(url, "MCEdit-0.1.7.1.win-amd64.zip")
                     unzip(name, mce_path2)
             if the_os == "MacOSX":
                 name = "MCEdit-0.1.7.1.macosx-10_6-x86_64.zip"
                 url = "https://bitbucket.org/codewarrior0/mcedit/downloads/MCEdit-0.1.7.1.macosx-10_6-x86_64.zip"
-                new_mcedit = urllib.urlretrieve(url, "MCEdit-0.1.7.1.macosx-10_6-x86_64.zip")
+                urllib.urlretrieve(url, "MCEdit-0.1.7.1.macosx-10_6-x86_64.zip")
                 unzip(name, mce_path2)
             
         if version == "Development":
@@ -94,17 +98,17 @@ def perform(level, box, options):
                 if the_bit == "32-Bit":
                     url = lines.pop(0)
                     name = lines.pop(1)
-                    new_mcedit = urllib.urlretrieve(url, name)
+                    urllib.urlretrieve(str(url), name)
                     unzip(name, mce_path2)
                 if the_bit == "64-Bit":
                     url = lines.pop(2)
                     name = lines.pop(3)
-                    new_mcedit = urllib.urlretrieve(url, name)
+                    urllib.urlretrieve(url, name)
                     unzip(name, mce_path2)
             if the_os == "MacOSX":
                 url = lines.pop(4)
                 name = lines.pop(5)
-                new_mcedit = urllib.urlretrieve(url, name)
+                urllib.urlretrieve(str(url), str(name))
                 unzip(name, mce_path2)
     
     if cleanup:
