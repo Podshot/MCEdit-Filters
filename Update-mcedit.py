@@ -4,6 +4,7 @@ import urllib
 import os
 from sys import platform as _platform
 import subprocess
+import time
 
 typer = {
     "Stable": 1,
@@ -35,10 +36,10 @@ def createrestart(operation, path):
         raise Exception("Not Completed")
     if operation == "Windows":
         contents.append("@ECHO OFF\n")
+        contents.append("taskkill /f /im mcedit.exe\n")
         contents.append("timeout /t 10 /nobreak >nul\n")
         contents.append("xcopy " + '"' + str(path) + "\\temp" + '"' + " " + '"' + str(path) + '"' + " /E /V /Y\n")
         contents.append("start mcedit.exe\n")
-        contents.append("PAUSE")
         contents.append("EXIT\n")
         with open(str(path) + "/" + "restart.bat", "w") as f:
             f.writelines(contents)
@@ -47,8 +48,9 @@ def createrestart(operation, path):
 def unzip(the_zipfile, the_path):
     with zipfile.ZipFile(the_zipfile, "r") as z:
         z.extractall(the_path + "\\temp")
-        os.chdir(str(the_path))
-        subprocess.call(["restart.bat"])
+        os.chdir(the_path)
+        os.system("restart.bat")
+        time.sleep(2.5)
         raise SystemExit()
                         
         
@@ -97,17 +99,19 @@ def perform(level, box, options):
             if the_os == "Windows":
                 if the_bit == "32-Bit":
                     url = lines.pop(0)
-                    name = lines.pop(1)
-                    urllib.urlretrieve(str(url), name)
+                    name = lines.pop(0)
+                    urllib.urlretrieve(str(url))
                     unzip(name, mce_path2)
                 if the_bit == "64-Bit":
                     url = lines.pop(2)
-                    name = lines.pop(3)
+                    name = lines.pop(2)
+                    print 'URL: %s' % (url)
+                    print 'Name: %s' % (name)
                     urllib.urlretrieve(url, name)
                     unzip(name, mce_path2)
             if the_os == "MacOSX":
                 url = lines.pop(4)
-                name = lines.pop(5)
+                name = lines.pop(4)
                 urllib.urlretrieve(str(url), str(name))
                 unzip(name, mce_path2)
     
