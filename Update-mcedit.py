@@ -5,6 +5,7 @@ import os
 from sys import platform as _platform
 import subprocess
 import time
+import shutil
 
 typer = {
     "Stable": 1,
@@ -21,14 +22,21 @@ bit = {
     "64-Bit": 2,
     }
 
-inputs = (
-    ("Version Type", tuple(sorted(typer.keys()))),
+inputs = [
+    (("Version Type", tuple(sorted(typer.keys()))),
     ("Operating System", tuple(sorted(oss.keys()))),
     ("Cleanup", False),
-    ("The option below is only needed for Windows","label"),
+    ("The option below is only needed for Windows", "label"),
     ("Processor Type", tuple(sorted(bit.keys()))),
-    ("Use cleanup after you have run the filter ONCE","label"),
-    )
+    ("Use cleanup after you have run the filter ONCE", "label"),
+    ("Read the README tab BEFORE running this filter", "label"),
+    ("Settings","title"),),
+    (("This filter updates to the specified version of MCEdit", "label"),
+    ("This filter currently does not support 'OS X' fully, but will still download the file", "label"),
+    ("I am not responsible for any damage done to your computer/MCEdit installation", "label"),
+    ("Use this filter at your own risk, make a backup of the MCEdit Installation before running this filter", "label"),
+    ("README","title"),),
+    ]
 
 def createrestart(operation, path):
     contents = [""]
@@ -80,40 +88,65 @@ def perform(level, box, options):
         if version == "Stable":
             if the_os == "Windows":
                 if the_bit == "32-Bit":
-                    name = "MCEdit-0.1.7.1.win32.zip"
-                    url = "https://bitbucket.org/codewarrior0/mcedit/downloads/MCEdit-0.1.7.1.win32.zip"
+                    url = lines.pop(8)
+                    name = lines.pop(8)
                     urllib.urlretrieve(url, "MCEdit-0.1.7.1.win32.zip")
                     unzip(name, mce_path2)
                 if the_bit == "64-Bit":
-                    name = "MCEdit-0.1.7.1.win-amd64.zip"
-                    url = "https://bitbucket.org/codewarrior0/mcedit/downloads/MCEdit-0.1.7.1.win-amd64.zip"
+                    url = lines.pop(10)
+                    name = lines.pop(10)
                     urllib.urlretrieve(url, "MCEdit-0.1.7.1.win-amd64.zip")
                     unzip(name, mce_path2)
             if the_os == "MacOSX":
-                name = "MCEdit-0.1.7.1.macosx-10_6-x86_64.zip"
-                url = "https://bitbucket.org/codewarrior0/mcedit/downloads/MCEdit-0.1.7.1.macosx-10_6-x86_64.zip"
-                urllib.urlretrieve(url, "MCEdit-0.1.7.1.macosx-10_6-x86_64.zip")
+                url = lines.pop(12)
+                name = lines.pop(12)
+                urllib.urlretrieve(str(url), name)
                 unzip(name, mce_path2)
             
         if version == "Development":
             if the_os == "Windows":
                 if the_bit == "32-Bit":
-                    url = lines.pop(0)
-                    name = lines.pop(0)
-                    urllib.urlretrieve(str(url))
+                    url = lines.pop(1)
+                    name = lines.pop(1)
+                    urllib.urlretrieve(str(url), name)
                     unzip(name, mce_path2)
                 if the_bit == "64-Bit":
-                    url = lines.pop(2)
-                    name = lines.pop(2)
+                    url = lines.pop(3)
+                    name = lines.pop(3)
                     print 'URL: %s' % (url)
                     print 'Name: %s' % (name)
-                    urllib.urlretrieve(url, name)
+                    urllib.urlretrieve(str(url), name)
                     unzip(name, mce_path2)
             if the_os == "MacOSX":
-                url = lines.pop(4)
-                name = lines.pop(4)
-                urllib.urlretrieve(str(url), str(name))
+                url = lines.pop(5)
+                name = lines.pop(5)
+                urllib.urlretrieve(str(url), name)
                 unzip(name, mce_path2)
     
     if cleanup:
-        return
+        shutil.rmtree('/temp')
+        if _platform == "win32":
+            os.remove("restart.bat")
+        if version == "Development":
+            if the_os == "Windows":
+                if the_bit == "32-Bit":
+                    name = lines.pop(2)
+                    os.remove(name)
+                if the_bit == "64-Bit":
+                    name = lines.pop(4)
+                    os.remove(name)
+            if the_os == "MacOSX":
+                name = lines.pop(6)
+                os.remove(name)
+        if version == "Stable":
+            if the_os == "Windows":
+                if the_bit == "32-Bit":
+                    name = lines.pop(9)
+                    os.remove(name)
+                if the_bit == "64-Bit":
+                    name = lines.pop(11)
+                    os.remove(name)
+            if the_os == "MacOSX":
+                name = lines.pop(13)
+                os.remove(name)
+        raise Exception("Cleanup Finished")
