@@ -8,11 +8,11 @@ Repository, look at the Developer Section.
 The following names have contributed to 
 the GitHub:
 
-Podshot
+[Podshot](https://github.com/Podshot)
 <br>
-Tomsik68
+[Tomsik68](https://github.com/tomsik68)
 <br>
-
+[awsmazinggenius](https://github.com/awsmazinggenius)
 
 
 
