@@ -1,6 +1,6 @@
 from pymclevel.nbt import *
 
-displayName = "Id to Block Name"
+displayName = "ID to Block Name"
 
 def num2str(string):
     popped4 = ''
@@ -813,6 +813,11 @@ def num2str(string):
         string.append(popped4)
     if popped == '159':
         string.append('minecraft:stained_hardened_clay')
+        string.append(popped2)
+        string.append(popped3)
+        string.append(popped4)
+    if popped == "165": # Slime Block. Sure Hope That I'm Doing This Right.
+        string.append("minecraft:slime")
         string.append(popped2)
         string.append(popped3)
         string.append(popped4)
