@@ -175,8 +175,27 @@ def createSphereTiles(boxx, boxy, boxz, idBlock, dataBlock, level, offset):
     createCMDBlock(boxx + 3, boxy, boxz - 1, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[-30f,265f]" + blockvar + "}"))
     createCMDBlock(boxx + 3, boxy, boxz, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[-20f,-5f]" + blockvar + "}"))
     createCMDBlock(boxx + 3, boxy, boxz + 1, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[-20f,85f]" + blockvar + "}"))
-            
-    
+    createCMDBlock(boxx + 3, boxy, boxz + 2, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[-20f,175f]" + blockvar + "}"))
+    createCMDBlock(boxx + 3, boxy, boxz + 3, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[-20f,265]" + blockvar + "}"))
+    createCMDBlock(boxx + 3, boxy, boxz + 4, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[-10f,-5f]" + blockvar + "}"))
+    #
+    createCMDBlock(boxx + 2, boxy, boxz - 2, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[-10f,85f]" + blockvar + "}"))
+    createCMDBlock(boxx + 2, boxy, boxz - 1, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[-10f,175f]" + blockvar + "}"))
+    createCMDBlock(boxx + 2, boxy, boxz, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[-10f,265f]" + blockvar + "}"))
+    createCMDBlock(boxx + 2, boxy, boxz + 1, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[0f,-5f]" + blockvar + "}"))
+    createCMDBlock(boxx + 2, boxy, boxz + 2, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[0f,85]" + blockvar + "}"))
+    createCMDBlock(boxx + 2, boxy, boxz + 3, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[0f,175f]" + blockvar + "}"))
+    createCMDBlock(boxx + 2, boxy, boxz + 4, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[0f,265f]" + blockvar + "}"))
+    #
+    createCMDBlock(boxx + 1, boxy, boxz - 2, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[20f,-5f]" + blockvar + "}"))
+    createCMDBlock(boxx + 1, boxy, boxz - 1, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[20f,85f]" + blockvar + "}"))
+    createCMDBlock(boxx + 1, boxy, boxz, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[20f,175f]" + blockvar + "}"))
+    createCMDBlock(boxx + 1, boxy, boxz + 1, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[20f,265f]" + blockvar + "}"))
+    #
+    createCMDBlock(boxx - 1, boxy, boxz - 2, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[30f,-5f]" + blockvar + "}"))
+    createCMDBlock(boxx - 1, boxy, boxz - 1, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[30f,85f]" + blockvar + "}"))
+    createCMDBlock(boxx - 1, boxy, boxz, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[30f,175f]" + blockvar + "}"))
+    createCMDBlock(boxx - 1, boxy, boxz + 1, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[30f,265f]" + blockvar + "}"))
     
     
     
