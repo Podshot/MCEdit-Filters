@@ -3,10 +3,12 @@ from pymclevel.nbt import *
 from pymclevel.box import Vector
 from pymclevel.materials import alphaMaterials
 import time
+import os
 
 debug = False
 logFile = []
 coordfix = 10
+moduleFiles = []
 
 displayName = "Create Spheres"
 
@@ -47,11 +49,13 @@ shapes = {
     "2D Circle": 1,
     "Sphere": 2,
     "Incomplete Sphere": 3,
+    #"Sphere with Density adjustment": 4,
     }
 
 inputs = (
     ("Shape Type:", tuple(sorted(shapes.keys()))),
     ("Block Type:", alphaMaterials.Stone),
+    ("Radius", 84)
     )
     
 def createOneCircle():
@@ -1245,8 +1249,96 @@ def createIncompleteTiles(boxx, boxy, boxz, idBlock, dataBlock, level, offset):
     createCMDBlock(boxx - 1, boxy - 4, boxz + 1, level, str("/summon MinecartRideable " + destination + " {CustomDisplayTile:1,Rotation:[-45f,5-f]" + blockvar + "}"))
     
     
+# Abrightmoore Methods
+def setBlockIfEmpty(level, (block, data), x, y, z):
+    tempBlock = level.blockAt(x,y,z)
+    if tempBlock == 0:
+        setBlock(level, (block, data), x, y, z)
+
+def setBlock(level, (block, data), x, y, z):
+    level.setBlockAt(x, y, z, block)
+    level.setBlockDataAt(x, y, z, data)
+
+def setBlockToGround(level, (block, data), x, y, z, ymin):
+    for iterY in xrange(ymin, y):
+        setBlockIfEmpty(level, (block, data), x, iterY, z)
+        
+        
+def getBoxSize(box):
+    return (box.maxx - box.minx, box.maxy - box.miny, box.maxz - box.minz)
+
+def fix(angle):
+    while angle > pi:
+        angle = angle - 2 * pi
+    while angle < -pi:
+        angle = angle + 2 * pi
+    return angle
+# End Abrightmoore Methods
+
+def sphereWithDensity(level, box, options):
+    (width, height, depth) = getBoxSize(box)
+    centreWidth = width / 2
+    centreHeight = height / 2
+    centreDepth = depth / 2
+    
+    baseX = box.minx + coordfix
+    baseY = box.miny
+    baseZ = box.minz
+    O_RADIUS = options["Radius"]
+    OFFSET = 10
+    O_STEP_H = 5
+    O_STEP_V = 5
+    O_MATERIAL_ID = options["Block Type:"].ID
+    O_MATERIAL_DATA = options["Block Type:"].blockData
+    
+    AIRBLOCK = 0
+    AIR = (AIRBLOCK,0)
+    COMMANDBLOCK = (137,0)
+    CHUNKSIZE = 16
+    PACKEDCHUNKSIZE = 16
+    LAYERGAP = 3
+    packedSpawnerCount = 0
+    
+    if baseX == 0 and baseY == 0 and baseZ == 0:
+        baseX = box.maxx-(box.minx % CHUNKSIZE)
+        baseZ = box.maxz-(box.maxz % CHUNKSIZE)
+        baseY = box.maxy+1*CHUNKSIZE
+        
+    iterH = 0
+    while iterH <= 360:
+        iterV = 0
+        while iterV <= 180:
+            spawnerX = baseX + (packedSpawnerCount%PACKEDCHUNKSIZE)*OFFSET
+            spawnerY = baseY + ((int)(packedSpawnerCount/(PACKEDCHUNKSIZE*PACKEDCHUNKSIZE)))*OFFSET*LAYERGAP
+            spawnerZ = baseZ + ((int)(packedSpawnerCount/PACKEDCHUNKSIZE)%PACKEDCHUNKSIZE)*OFFSET
+            chunk = level.getChunk(spawnerX/CHUNKSIZE, spawnerZ/CHUNKSIZE)
+
+            theCommand = "/summon MinecartRideable "+str(box.minx)+" "+str(box.miny)+" "+str(box.minz)+" {CustomDisplayTile:1,DisplayTile:"+str(O_MATERIAL_ID)+",DisplayData:"+str(O_MATERIAL_DATA)+",DisplayOffset:"+str(O_RADIUS)+",Rotation:["+str(iterH)+"f,"+str(iterV)+"f]}"
+            
+            setBlock(level, COMMANDBLOCK, spawnerX, spawnerY, spawnerZ)
+            createCMDBlockAB(spawnerX, spawnerY, spawnerZ, chunk, theCommand)
+
+            packedSpawnerCount = packedSpawnerCount+1
+            chunk.dirty = True
+            iterV = iterV + O_STEP_V
+        iterH = iterH + O_STEP_H
+
+def createCMDBlockAB(x, y, z, chunk, com):
+    commandBlock = TAG_Compound()
+    commandBlock["id"] = TAG_String("Control")
+    commandBlock["x"] = TAG_Int(x)
+    commandBlock["y"] = TAG_Int(y)
+    commandBlock["z"] = TAG_Int(z)
+    commandBlock["CustomName"] = TAG_String(u'@')
+    commandBlock["TrackOutput"] = TAG_Byte(1)
+    commandBlock["Command"] = TAG_String(com)
+    chunk.TileEntities.append(commandBlock)
+    chunk.dirty = True
+    del commandBlock
     
     
+    
+
 def perform(level, box, options):
     xbox = box.minx + coordfix
     ybox = box.miny
@@ -1254,6 +1346,7 @@ def perform(level, box, options):
     form = options["Shape Type:"]
     blockid = options["Block Type:"].ID
     blockdata = options["Block Type:"].blockData
+    radi = options["Radius"]
     baseblockid = int(level.blockAt(box.minx, box.miny, box.minz))
     baseblockdata = int(level.blockDataAt(box.minx, box.miny, box.minz))
     solidid = int(level.blockDataAt(box.minx, box.miny - 1, box.minz))
@@ -1264,13 +1357,16 @@ def perform(level, box, options):
     
     if form == "2D Circle":
         createOne(level, [xbox,box.miny,box.minz])
-        createOneTiles(xbox, box.miny, box.minz, blockid, blockdata, level, 84)
+        createOneTiles(xbox, box.miny, box.minz, blockid, blockdata, level, radi)
     if form == "Sphere":
         createAnObjectCalledSphere(level, [xbox,box.miny,box.minz])
-        createSphereTiles(xbox, box.miny, box.minz, blockid, blockdata, level, 84)
+        createSphereTiles(xbox, box.miny, box.minz, blockid, blockdata, level, radi)
     if form == "Incomplete Sphere":
         createObjectIncomplete(level, [xbox,box.miny,box.minz])
-        createIncompleteTiles(xbox, box.miny, box.minz, blockid, blockdata, level, 84)
+        createIncompleteTiles(xbox, box.miny, box.minz, blockid, blockdata, level, radi)
+    if form == "Sphere with Density adjustment":
+       sphereWithDensity(level, box, options)
+        
     level.markDirtyBox = True
 
     
