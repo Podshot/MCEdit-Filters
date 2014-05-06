@@ -5,21 +5,9 @@
 # Have an idea? Can you improve this code? Fork the Github!
 # Link: https://github.com/Podshot/MCEdit-Filters
 
-from pymclevel import alphaMaterials
 from pymclevel import MCSchematic
-from pymclevel import TileEntity
-from pymclevel import TAG_List
-from pymclevel import TAG_Byte
-from pymclevel import TAG_Int
-from pymclevel import TAG_Compound
-from pymclevel import TAG_Short
-from pymclevel import TAG_Double
-from pymclevel import TAG_Float
-from pymclevel import TAG_String
 from pymclevel import TAG_Byte_Array
-from math import sqrt
-from numpy import *
-import random
+from pymclevel.box import Vector
 import time
 
 displayName = "Generate Structures"
@@ -38,7 +26,7 @@ Build = {
 
 inputs = (
         ("Building", tuple(sorted(Build.keys()))),
-)
+    )
 
 def library():
     e = MCSchematic(shape=(9,9,8),filename='')
@@ -70,27 +58,30 @@ def perform(level, box, options):
     print '%s: Ended: %s' % (method, time.ctime())
     level.markDirtyBox(box)
 
-h1 = houseOne()
-fm = farm()
-libr = library()
-larh1 = LargeHouse1()
 def lib(level,dest):
     vec = Vector(0,1,0)
-    level.copyBlocksFrom(libr,libr.bounds,vec + dest)
+    level.copyBlocksFrom(library(),library().bounds,vec + dest)
+    
 def farms(level,dest):
-    vec = Vector(0,1,0)
-    level.copyBlocksFrom(fm,fm.bounds,vec + dest)
+    if int(level.blockAt(x, y, z)) == 0:
+        level.copyBlocksFrom(farm(),farm().bounds,dest)
+    else:
+    	vec = Vector(0,1,0)
+    	level.copyBlocksFrom(farm(),farm().bounds,vec + dest)
+    
 def houseo(level,dest):
     vec = Vector(0,1,0)
-    level.copyBlocksFrom(h1,h1.bounds,vec + dest)
+    level.copyBlocksFrom(houseOne(),houseOne().bounds,vec + dest)
+    
 def LH1(level,dest):
     vec = Vector(0,1,0)
-    level.copyBlocksFrom(larh1,larh1.bounds,vect + dest)
+    level.copyBlocksFrom(LargeHouse1(),LargeHouse1().bounds,vect + dest)
+    
 def findIn(level, box, options):
     build = options["Building"]
     method = "Generator"
     print '%s: Started: %s' % (method, time.ctime())
-    print '%s: Choose building: %s' % (method, build)
+    print '%s: Chose building: %s' % (method, build)
     # Start input finder
     if build == "1":
         print 'Test'
