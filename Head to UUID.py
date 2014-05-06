@@ -1,5 +1,11 @@
 from pymclevel.nbt import *
-import urllib2
+import urllib2, json, time
+
+URL = "http://api.goender.net/api/profiles/"
+
+inputs = (
+     ("Player Name:", ("string", "value=")),
+     )
 
 def perform(level, box, options):
      
@@ -14,10 +20,21 @@ def perform(level, box, options):
                      if "ExtraType" not in te:
                          # Assuming user has already converted world to a 1.8 Snapshot
                          player = str(options["Player Name:"])
-                         response = urllib2.urlopen("http://connorlinfoot.com/uuid/api/?user=" + player + "&get=uuid")
-                         source = response.read()
-                         print source
-                         #ownerTag = TAG_Compound()
-                         #ownerTag["Id"] = TAG_String()
+                         site = urllib2.urlopen(URL + player)
+                         response = site.read()
+                         jsonRaw = json.loads(response)
+                         te["Owner"] = TAG_Compound()
+                         te["Owner"]["Id"] = TAG_String(jsonRaw[player])
+                         te["Owner"]["Name"] = TAG_String(player)
+                         chunk.dirty = True
+                    else:
+                         name = te["ExtraType"].value
+                         site = urllib2.urlopen(URL + name)
+                         response = site.read()
+                         jsonRaw = json.loads(response)
+                         te["Owner"] = TAG_Compound()
+                         te["Owner"]["Id"] = TAG_String(jsonRaw[player])
+                         te["Owner"]["Name"] = TAG_String(player)
+                         chunk.dirty = True
                          
                          
