@@ -28,8 +28,11 @@ def perform(level, box, options):
                 if doRemove:
                     os.remove(filt)
                 if changeLog:
-                    log = str(jsonRaw["ChangeLog"])
-                    webbrowser.open_new_tab(log)
+                    if "ChangeLog" in jsonRaw:
+                        log = str(jsonRaw["ChangeLog"])
+                        webbrowser.open_new_tab(log)
+                    else:
+                        print '%s: Filter "%s" did not have a Change Log' % (METHOD, py.displayName)
             else:
                 print '%s: %s\'s version matched update the site\'s version' % (METHOD, py.displayName)
         except:
