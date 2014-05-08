@@ -17,7 +17,7 @@ def perform(level, box, options):
         response = site.read()
         jsonRaw = json.loads(response)
         if filterVersion != str(jsonRaw["Version"]):
-            urllib.urlretrieve(str(jsonRaw["Download-Url"]), str(jsonRaw["Name"]))
+            urllib.urlretrieve(str(jsonRaw["Download-URL"]), str(jsonRaw["Name"]))
             if doRemove:
                 os.remove(filt)
             
