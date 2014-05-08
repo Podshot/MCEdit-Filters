@@ -1,8 +1,13 @@
-import glob, urllib2, urllib, json
+import glob, urllib2, urllib, json, os
 
 displayName = "Update Filters"
 
+inputs = (
+    ("Remove Old Filters?", True),
+    )
+
 def perform(level, box, options):
+    doRemove = options["Remove Old Filters?"]
     filters = glob.glob("filters/*.py")
     for filt in filters:
         py = __import__(filt)
@@ -13,4 +18,6 @@ def perform(level, box, options):
         jsonRaw = json.loads(response)
         if filterVersion != str(jsonRaw["Version"]):
             urllib.urlretrieve(str(jsonRaw["Download-Url"]), str(jsonRaw["Name"]))
+            if doRemove:
+                os.remove(filt)
             
