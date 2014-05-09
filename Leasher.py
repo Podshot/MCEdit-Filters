@@ -10,6 +10,9 @@ from pymclevel import TAG_Long
 
 displayName = "Leasher"
 
+VERSION = "1.1.0"
+UPDATE_URL = "http://podshot.github.io/update/Leasher.json"
+
 inputs = (
     ("Note: Entities must be named with Name Tags before leashing", "label"),
     ("Entity #1 Name:", "string"),

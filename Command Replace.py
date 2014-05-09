@@ -2,6 +2,9 @@ from pymclevel.nbt import *
 
 displayName = "Command Replace"
 
+VERSION = "1.0.0"
+UPDATE_URL = "http://podshot.github.io/update/Command%20Replace.json"
+
 inputs = (
     ("Filter Word #1:",("string","value=")),
     ("Replace Word #1:",("string","value=")),

@@ -2,6 +2,9 @@ from pymclevel.nbt import TAG_String
 
 displayName = "Custom Heads"
 
+VERSION = "1.0.0"
+UPDATE_URL = "http://podshot.github.io/update/Custom%20Heads.json"
+
 safeheads = {
     "Note Block": "C418",
     "Old Radio": "uioz",

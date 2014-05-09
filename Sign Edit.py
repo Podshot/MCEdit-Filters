@@ -2,6 +2,9 @@ from pymclevel.nbt import TAG_String
 import re
 import time
 
+VERSION = "1.0.0"
+UPDATE_URL = "http://podshot.github.io/update/Sign%20Edit.json"
+
 inputs = [
     (("Place Lines on signs", True),
     ("Filter Words", False),

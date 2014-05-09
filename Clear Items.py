@@ -2,6 +2,9 @@ from pymclevel.nbt import TAG_List
 
 displayName = "Clear Items"
 
+VERSION = "1.0.0"
+UPDATE_URL = "http://podshot.github.io/update/Clear%20Items.json"
+
 inputs = (
     ("Chest", True),
     ("Brewing Stand", True),

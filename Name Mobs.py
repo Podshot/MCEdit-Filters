@@ -15,6 +15,9 @@ from pymclevel import TAG_Double
 from pymclevel import TAG_List
 from pymclevel import MCSchematic
 
+VERSION = "1.8.0"
+UPDATE_URL = "http://podshot.github.io/update/Name%20Mobs.json"
+
 formatting = {
     "Bold":"l",
     "Strikethrough":"m",

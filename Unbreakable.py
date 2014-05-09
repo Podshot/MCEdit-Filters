@@ -2,6 +2,9 @@ from pymclevel.nbt import *
 
 displayName = "Unbreakable"
 
+VERSION = "1.0.0"
+UPDATE_URL = "http://podshot.github.io/update/Unbreakable.json"
+
 def perform(level, box, options):
 
     for (chunk, slices, point) in leve.getChunkSlices(box):

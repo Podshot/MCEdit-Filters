@@ -36,7 +36,7 @@ def perform(level, box, options):
                 # Checks to make sure the two versions don't match
                 urllib.urlretrieve(str(jsonRaw["Download-URL"]), str(jsonRaw["Name"]))
                 # Downloads the new filter to a file name determined by the update site (Used if the author like to version in the file name also)
-                print '%s: Updated "%s" from version %s to version %s' % (METHOD, py.displayName, py.VERSION, str(jsonRaw["Version"]))
+                print '%s: Updated "%s" from version %s to version %s' % (METHOD, jsonRaw["Name"], py.VERSION, str(jsonRaw["Version"]))
                 if doRemove:
                     # Removes the old filter if the user wants to
                     os.remove(filt)
@@ -47,8 +47,8 @@ def perform(level, box, options):
                         webbrowser.open_new_tab(log)
                         # Opens a new tab in the default webbrowser
                     else:
-                        print '%s: Filter "%s" did not have a Change Log' % (METHOD, py.displayName)
+                        print '%s: Filter "%s" did not have a Change Log' % (METHOD, jsonRaw["Name"])
             else:
-                print '%s: %s\'s version matched update the site\'s version' % (METHOD, py.displayName)
+                print '%s: %s\'s version matched update the site\'s version' % (METHOD, jsonRaw["Name"])
         except:
             pass

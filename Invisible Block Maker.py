@@ -3,6 +3,9 @@ import time
 
 displayName = "Invisible Wall"
 
+VERSION = "1.0.0"
+UPDATE_URL = "http://podshot.github.io/update/Invisible%20Block%20Maker.json"
+
 inputs = (
     ("These invisible blocks are full blocks, and they are un-breakable in survival", "label"),
     ("Version: 1.0","label"),

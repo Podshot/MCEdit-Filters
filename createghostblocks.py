@@ -1,6 +1,9 @@
 from pymclevel.nbt import *
 import time
 
+VERSION = "1.0.0"
+UPDATE_URL = "http://podshot.github.io/update/creatghostblocks.json"
+
 displayName = "Ghost Block Creator"
 
 def perform(level, box, options):

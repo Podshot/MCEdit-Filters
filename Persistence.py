@@ -18,6 +18,9 @@ import random
 
 displayName = "Make Mobs Persistent"
 
+VERSION = "1.3.0"
+UPDATE_URL = "http://podshot.github.io/update/Persistence.json"
+
 inputs = (
         ("Makes any mobs in the Selection Box Persistent", "label"),
         ("Version: 1.3","label"),

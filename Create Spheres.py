@@ -12,6 +12,9 @@ moduleFiles = []
 
 displayName = "Create Spheres"
 
+VERSION = "1.0.0"
+UPDATE_URL = "http://podshot.github.io/update/Create%20Spheres.json"
+
 block_map = {
     0:"minecraft:air",1:"minecraft:stone",2:"minecraft:grass",3:"minecraft:dirt",4:"minecraft:cobblestone",5:"minecraft:planks",6:"minecraft:sapling",
     7:"minecraft:bedrock",8:"minecraft:flowing_water",9:"minecraft:water",10:"minecraft:flowing_lava",11:"minecraft:lava",12:"minecraft:sand",13:"minecraft:gravel",

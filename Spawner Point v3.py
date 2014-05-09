@@ -23,6 +23,9 @@ from pymclevel import TileEntity
 
 displayName = "Spawner Point v3"
 
+VERSION = "1.5.0"
+UPDATE_URL = "http://podshot.github.io/update/Spawner%20Point%20v3.json"
+
 inputs = (
     ("Change Spawn Radius?", False),
     ("Replaces the Spawning Coordinates to a Sponge block in the Selection box.", "label"),

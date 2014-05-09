@@ -2,6 +2,9 @@ from pymclevel.nbt import TAG_List, TAG_Double, TAG_Short, TAG_Compound
 
 displayName = "Spawn Here"
 
+VERSION = "1.1.0"
+UPDATE_URL = "http://podshot.github.io/update/Spawn%20Here.json"
+
 inputs = (
     ("Spawners", True),
     ("Minecart Spawners", True),

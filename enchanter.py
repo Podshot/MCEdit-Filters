@@ -2,6 +2,9 @@ from pymclevel.nbt import *
 
 displayName = "Enchanter"
 
+VERSION = "1.0.0"
+UPDATE_URL = "http://podshot.github.io/update/enchanter.json"
+
 Effects = {
 	"*None": None,
 	"Protection": 0,

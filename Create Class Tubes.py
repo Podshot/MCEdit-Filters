@@ -5,6 +5,9 @@ from pymclevel.box import Vector
 
 displayName = "Create Class Tubes"
 
+VERSION = "1.0.0"
+UPDATE_URL = "http://podshot.github.io/update/Create%20Class%Tubes.json"
+
 Boots = {
     "Leather Boots": 301,
     "Iron Boots": 309,

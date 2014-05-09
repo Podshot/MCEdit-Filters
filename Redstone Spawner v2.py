@@ -24,6 +24,9 @@ import random
 # Some imports are not used, but you can never have too many imports :D
 displayName = "Red-Spawner"
 
+VERSION = "1.2.0"
+UPDATE_URL = ""
+
 inputs = (
         ("Extend amount", (0,0,10)),
         ("Made by Podshot", "label"),

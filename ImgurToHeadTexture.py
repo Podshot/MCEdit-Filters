@@ -6,6 +6,9 @@ from mcplatform import askOpenFile
 CHUNKSIZE = 16
 USEFILE = False
 
+VERSION = "1.0.0"
+UPDATE_URL = "http://podshot.github.io/update/ImgurToHeadTexture.json"
+
 inputs = (
     ("Imgur URL", ("string", "value=")),
     )

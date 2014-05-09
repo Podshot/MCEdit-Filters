@@ -2,6 +2,9 @@ from pymclevel.nbt import *
 
 displayName = "ID to Block Name"
 
+VERSION = "1.0.0"
+UPDATE_URL = "http://podshot.github.io/update/id2blockname.json"
+
 def num2str(string):
     popped4 = ''
     print 'String: %s' % (string)

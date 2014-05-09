@@ -1,5 +1,8 @@
 from pymclevel import TAG_Byte
 
+VERSION = "1.0.0"
+UPDATE_URL = "http://podshot.github.io/update/trulyinfinitedispensers.json"
+
 def perform(level, box, options):
 
     for (chunk, slices, point) in level.getChunkSlices(box):

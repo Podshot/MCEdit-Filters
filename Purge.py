@@ -18,6 +18,9 @@ import random
 
 displayName = "Purge Selected Entity"
 
+VERSION = "1.4.0"
+UPDATE_URL = "http://podshot.github.io/update/Purge.json"
+
 Mobs = ("Creeper", "Skeleton", "WitherSkeleton", "Spider", "Giant", "Zombie", "Slime", "Ghast", "PigZombie", "Enderman", \
 	"CaveSpider", "Silverfish", "Blaze", "LavaSlime" , "EnderDragon", "WitherBoss", "Witch", "Bat", "Pig", \
 	"Sheep", "Cow", "Chicken", "Squid", "Wolf", "MushroomCow", "SnowMan", "Ozelot", "VillagerGolem", "Villager", "Horse")

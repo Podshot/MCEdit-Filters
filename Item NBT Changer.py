@@ -10,6 +10,9 @@ CDNUM = 8
 CPONUM = 16
 ETNUM = 32
 
+VERSION = "1.0.0"
+UPDATE_URL = "http://podshot.github.io/update/Item%20NBT%20Changer.json"
+
 displayName = "Item NBT Changer"
 
 inputs = (

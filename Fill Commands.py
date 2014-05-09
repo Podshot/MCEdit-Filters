@@ -1,6 +1,9 @@
 from pymclevel import TAG_String
 import time
 
+VERSION = "1.0.0"
+UPDATE_URL = "http://podshot.github.io/update/Fill%20Commands.json"
+
 inputs = (
     ("Command", "string"),
     ("Version: 1.0","label"),

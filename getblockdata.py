@@ -1,5 +1,8 @@
 displayName = "Get Block Data"
 
+VERSION = "1.1.0"
+UPDATE_URL = "http://podshot.github.io/update/getblockdata.json"
+
 inputs = (
     ("Version: 1.1","label"),
     )

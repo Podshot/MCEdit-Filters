@@ -3,6 +3,9 @@ import urllib2, json, time
 
 URL = "http://api.goender.net/api/profiles/"
 
+VERSION = "1.0.0"
+UPDATE_URL = "http://podshot.github.io/update/Head%20to%20UUID.json"
+
 def perform(level, box, options):
      
      for (chunk, point, slices) in level.getChunkSlices(box):

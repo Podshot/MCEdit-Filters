@@ -19,6 +19,9 @@ from pymclevel import TileEntity
 
 displayName = "Custom Minecart Creator"
 
+VERSION = "1.7.0"
+UPDATE_URL = "http://podshot.github.io/update/Minecart%20Creator.json"
+
 carts = {
       "Ridable": 1,
       "Furnace": 2,

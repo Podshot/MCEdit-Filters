@@ -4,6 +4,9 @@ import time
 METHOD = "[Executify]"
 BASECOMMAND = "/execute {} {} {}"
 
+VERSION = "1.0.0"
+UPDATE_URL = "http://podshot.github.io/update/Executify.json"
+
 displayName = "Executify"
 
 inputs = (
@@ -25,8 +28,8 @@ def perform(level, box, options):
             
                 if (x,y,z) in box:
                     command = t["Command"].value
-					newC = BASECOMMAND.format(eea, rc, command)
-					time.sleep(1)
-					t["Command"] = TAG_String(newC)
-					chunk.dirty = True
+                    newC = BASECOMMAND.format(eea, rc, command)
+		    time.sleep(1)
+		    t["Command"] = TAG_String(newC)
+		    chunk.dirty = True
 	print '%s: Ended at %s' % (METHOD, time.ctime())

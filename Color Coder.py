@@ -3,6 +3,9 @@ from pymclevel.nbt import TAG_String
 
 char = unicode("§")
 
+VERSION = "1.0.0"
+UPDATE_URL = "http://podshot.github.io/update/Color%20Coder.json"
+
 def perform(level, box, options):
 
     for (chunk, slices, point) in level.getChunkSlices(box):

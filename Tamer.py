@@ -1,5 +1,8 @@
 from pymclevel.nbt import TAG_Byte, TAG_String
 
+VERSION = "1.0.0"
+UPDATE_URL = "http://podshot.github.io/update/Tamer.json"
+
 inputs = (
     ("Cats", True),
     ("Dogs", True),
