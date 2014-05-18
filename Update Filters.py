@@ -26,9 +26,11 @@ def perform(level, box, options):
             # I use __import__() to import a filter from a string
             filterUpdateURL = str(py.UPDATE_URL)
             # Grabs the declared variable name "UPDATE_URL"
-            if py.WIP_URL:
+            try:
                 filterWIPURL = str(py.WIP_URL)
                 # Grabs the declared variable name "WIP_URL"
+            except:
+                pass
             filterVersion = str(py.VERSION)
             # Grabs the declared variable name "VERSION"
             filterWIP = str(py.WIP)
