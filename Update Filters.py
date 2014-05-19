@@ -8,11 +8,13 @@ METHOD = "[Update Filters]"
 inputs = (
     ("Remove Old Filters?", True),
     ("View Change Logs", False),
+    ("Include WIP versions", False),
     )
 
 def perform(level, box, options):
     doRemove = options["Remove Old Filters?"]
     changeLog = options["View Change Logs"]
+    includeWIPs = options["Include WIP versions"]
     filters = glob.glob("*.py")
     # Search the "filters" folder for all files that have an extension of ".py"
     for filt in filters:
@@ -24,10 +26,23 @@ def perform(level, box, options):
             # I use __import__() to import a filter from a string
             filterUpdateURL = str(py.UPDATE_URL)
             # Grabs the declared variable name "UPDATE_URL"
+            try:
+                filterWIPURL = str(py.WIP_URL)
+                # Grabs the declared variable name "WIP_URL"
+            except:
+                pass
             filterVersion = str(py.VERSION)
             # Grabs the declared variable name "VERSION"
-            site = urllib2.urlopen(filterUpdateURL)
-            # Opens up a site connection the the filter's update page
+            filterWIP = str(py.WIP)
+            # Grabs the declared variable name "WIP"
+                try:
+                    if (includeWIPs or filterWIP == "True"):
+                        site = urllib2.urlopen(filterWIPURL)
+                    else:
+                       raise Exception("This is a really dirty way of doing this btw")
+                except:
+                    site = urllib2.urlopen(filterUpdateURL)
+            # Opens up a site connection the the filter's update page or WIP update page
             response = site.read()
             # Converts the page into a string
             jsonRaw = json.loads(response)
