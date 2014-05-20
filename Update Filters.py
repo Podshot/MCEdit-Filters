@@ -17,6 +17,7 @@ def perform(level, box, options):
     changeLog = options["View Change Logs"]
     includeWIPs = options["Include WIP versions"]
     filterDir = str(os.path.dirname(os.path.abspath(__file__)))
+    # Gets the directory of where the "filters" is located
     try:
         os.mkdir(filterDir + "/updates")
     except OSError:
@@ -26,9 +27,10 @@ def perform(level, box, options):
     for filt in filters:
         filterUpdateURL = None
         try:
-            # __import__() does not like file extensions, so I remove the .py extension from the file name
             pyfile = str(filt[8:])
+            # Removes the "filters/" from the filter path
             newName = pyfile.split(".")
+            # __import__() does not like file extensions, so I remove the .py extension from the file name
             name = str(newName[0])
             py = __import__(name)
             # I use __import__() to import a filter from a string
@@ -78,8 +80,11 @@ def perform(level, box, options):
             pass
         
     files = glob.glob(filterDir + "/updates/*.py")
+    # Finds all .py like before, but in the "updates" subfolder
     for f in files:
         shutil.copy(f, filterDir)
+        # Copies all the new filters from the "updates" folder to the parent("filters") folder
     time.sleep(2)
-    
+    # I want to wait just in case the disk is a little slow
     shutil.rmtree(filterDir + "/updates")
+    # Removes the directory tree of the "updates" folder
