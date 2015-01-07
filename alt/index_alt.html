@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>MCEdit filters</title>
+		<style type="text/css">
+			table, tr, td {
+				border-style: solid;
+				border-width: 1px;
+			}
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script type='text/javascript' src='lib/category_view.js' ></script>
+		<script type='text/javascript' src='lib/cache.js' ></script>
+		<script type='text/javascript' src='lib/search.js' ></script>
+		<script type='text/javascript' src='lib/youtube_player.js'></script>
+		<script type='text/javascript'>
+			$(document).ready(function() {
+				$("#videoplayer").hide();
+				$("#searchButton").click(search);
+			});
+		</script>
+		<link rel="stylesheet" type="text/css" href="lib/style.css" />
+	</head>
+	<body onload="loadData()">
+		<table width="100%">
+			<tr>
+				<td align="center" colspan='2'><h1>MCEdit filters</h1></td><td class='contribute_info' width="15%">Do you want your filter(s) to appear here? <a href="https://github.com/Podshot/MCEdit-Filters/fork">Fork the repo, add your changes & make a pull request!</a></td>
+			</tr>
+			<tr>
+				<td rowspan="2" width="20%" style='vertical-align: top;'><h2 align="center">Categories</h2><ul id='categories'></ul></td>
+				<td colspan='3' align="center"><span id='category'><h1>Category</h1></span>				<textarea cols='50' rows='1' id='search'></textarea>
+				<button id='searchButton'>
+					Search
+				</button>
+			</tr>
+			<tr>
+				<td id='content' colspan='3' align="left"></td>
+			</tr>
+			</tr>
+		</table>
+
+		<div id='videoplayer' onclick='$(this).hide()'>
+			<span style='background-color: black; color: white;'>If there is no video, <button onclick='window.location = "http://podshot.github.io"'>Click me!</button></span><BR>
+			<iframe id='youtube' allowfullscreen></iframe>
+		</div>
+	</body>
+</html>
+

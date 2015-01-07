@@ -1,0 +1,232 @@
+{
+	"categories": [
+		{
+			"name": "tile_entity_edit",
+			"title": "Tile Entity Edit"
+		}, {
+			"name": "cmd_blocks",
+			"title": "Command Blocks"
+		}, {
+			"name": "spawners",
+			"title": "Mob Spawners"
+		}, {
+			"name": "entity_edit",
+			"title": "Entity Edit"
+		}, {
+			"name": "item_edit",
+			"title": "Item Manipulation"
+		}, {
+			"name": "block_edit",
+			"title": "Block Manipulation"
+		}, {
+			"name": "world_gen",
+			"title": "World Generation"
+		}, {
+			"name": "podshot",
+			"title": "Created by Podshot"
+		}, {
+			"name": "tomsik68",
+			"title": "Created by Tomsik68"
+		}
+	],
+	"filters": [
+		{
+            		"name": "Create Spheres",
+            		"desc": "Creates Spheres by rotating Minecarts",
+            		"dl": "https://podshot.github.io/files/Create%20Spheres.py",
+            		"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/Create%20Spheres.py",
+            		"author": "Podshot",
+            		"categories": ["entity_edit", "podshot", "tile_entity_edit", "world_gen", "block_edit", "cmd_blocks"]
+        	}, {
+			"name": "Purge",
+			"desc": "Deletes the selected mob from the Selection Box ",
+			"dl": "http://podshot.github.io/files/Purge.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/Purge.py",
+			"author": "Podshot",
+			"categories": ["entity_edit", "podshot"]
+		}, {
+			"name": "Fill Dispensers Filter",
+			"desc": "Original Filter by Sethbling. Modified to support Droppers ",
+			"dl": "http://podshot.github.io/files/filldispensers.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/filldispensers.py",
+			"author": "Podshot",
+			"categories": ["tile_entity_edit", "podshot"]
+		}, {
+			"name": "Presistence Filter",
+			"desc": "Removes all entities in selection box",
+			"dl": "http://podshot.github.io/files/Persistence.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/Persistence.py",
+			"author": "Podshot",
+			"categories": ["entity_edit", "podshot"]
+		}, {
+			"name": "Name Mobs Filter",
+			"desc": "Names mobs in selection box",
+			"dl": "http://podshot.github.io/files/Name%20Mobs.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/Name%20Mobs.py",
+			"vid": "OxtwCwtxSKA",
+			"author": "Podshot",
+			"categories": ["entity_edit", "podshot"]
+		}, {
+			"name": "Get Block Data",
+			"desc": "Get a blocks ID and Data value",
+			"dl": "http://podshot.github.io/files/getblockdata.py",
+			"src": "https:https://github.com/Podshot/MCEdit-Filters/blob/master/getblockdata.py",
+			"author": "Podshot",
+			"categories": ["block_edit", "podshot"]
+		}, {
+			"name": "Leasher",
+			"desc": "Leashes mobs together",
+			"dl": "http://podshot.github.io/files/Leasher.py",
+			"src": "https:https://github.com/Podshot/MCEdit-Filters/blob/master/Leasher.py",
+			"author": "Podshot",
+			"categories": ["entity_edit", "podshot"]
+		}, {
+			"name": "Fill Commands",
+			"desc": "Fills all the Command Blocks in the Selection with the one specified Command",
+			"dl": "http://podshot.github.io/files/Fill%20Commands.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/Fill%20Commands.py",
+			"author": "Podshot",
+			"categories": ["tile_entity_edit", "cmd_blocks", "podshot"]
+		}, {
+			"name": "Clear Items",
+			"desc": "Clears every Tile Entities inventory",
+			"dl": "http://podshot.github.io/files/Clear%20Items.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/Clear%20Items.py",
+			"author": "Podshot",
+			"categories": ["tile_entity_edit", "podshot"]
+		}, {
+			"name": "Spawn Here",
+			"desc": "Sets the Spawners coordinates to the Spawners current location",
+			"dl": "http://podshot.github.io/files/Spawn%20Here.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/Spawn%20Here.py",
+			"author": "Podshot",
+			"categories": ["tile_entity_edit", "spawners", "podshot"]
+		}, {
+			"name": "Invisible Block Maker",
+			"desc": "Creates invisible blocks that are indestructible in survival",
+			"dl": "http://podshot.github.io/files/Invisible%20Block%20Maker.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/Invisible%20Block%20Maker.py",
+			"author": "Podshot",
+			"categories": ["world_gen", "block_gen", "podshot"]
+		}, {
+			"name": "Restone Spawner",
+			"desc": "Creates a Redstone Activated Spawner Layout",
+			"dl": "http://podshot.github.io/files/Redstone%20Spawner%20v2.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/Redstone%20Spawner%20v2.py",
+			"author": "Podshot",
+			"categories": ["world_gen", "block_gen", "spawners", "podshot"]
+		}, {
+			"name": "Minecart Creator",
+			"desc": "Creates a custom Minecart",
+			"dl": "http://podshot.github.io/files/Minecart%20Creator.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/Minecart%20Creator.py",
+			"author": "Podshot",
+			"categories": ["entity_edit", "podshot"]
+		}, {
+			"name": "Sign Edit",
+			"desc": "Edit sign text and replace words on a sign",
+			"dl": "http://podshot.github.io/files/Sign%20Edit.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/Sign%20Edit.py",
+			"author": "Podshot",
+			"categories": ["tile_entity_edit", "podshot"]
+		}, {
+			"name": "Id to Block Name",
+			"desc": "Changes the Block ID's in Command Blocks to the minecraft:<tile-name> format. The command must be either /setblock or /testblock",
+			"dl": "http://podshot.github.io/files/id2blockname.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/id2blockname.py",
+			"author": "Podshot",
+			"categories": ["tile_entity_edit", "cmd_blocks", "podshot"]
+		}, {
+			"name": "Create Class Tubes",
+			"desc": "Creates class tubes with armour and item dispensing capabilities",
+			"dl": "http://podshot.github.io/files/Create%20Class%20Tubes.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/Create%20Class%20Tubes.py",
+			"author": "Podshot",
+			"categories": ["tile_entity_edit", "podshot", "world_gen", "block_gen"]
+		}, {
+			"name": "Rename Tiles Filter",
+			"desc": "Renames all Tile Entities in the Selection Box ",
+			"dl": "http://podshot.github.io/files/Rename%20Tiles.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/Rename%20Tiles.py",
+			"author": "Tomsik68",
+			"categories": ["tile_entity_edit", "tomsik68"]
+		}, {
+			"name": "Block to Command",
+			"desc": "Turns all blocks into command blocks that use the /setblock command. Only works with 13w37a or above!",
+			"dl": "http://podshot.github.io/files/block2command.py",
+			"src": "https;//github.com/Podshot/MCEdit-Filters/blob/master/block2command.py",
+			"author": "Podshot",
+			"categories": ["world_gen", "tile_entity_edit", "block_edit", "cmd_blocks", "podshot"]
+		}, {
+			"name": "Enchanter",
+			"desc": "Adds a specified enchantment to every item in a chest, dropper, or dispenser",
+			"dl": "http://podshot.github.io/files/enchanter.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/enchanter.py",
+			"author": "Podshot",
+			"categories": ["tile_entity_edit", "item_edit", "podshot"]
+		}, {
+			"name": "Add Vines Filter",
+			"desc": " Add Vines to the sides of blocks ",
+			"dl": "http://podshot.github.io/files/AddVines.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/AddVines.py",
+			"author": "Tomsik68",
+			"categories": ["block_edit", "world_gen", "tomsik68"]
+		}, {
+			"name": "Schematic To Script Filter",
+			"desc": " Converts the Selection box into Python Code for filters. ",
+			"dl": "http://podshot.github.io/files/SchematicToScript.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/SchematicToScript.py",
+			"author": "Tomsik68",
+			"categories": ["world_gen", "block_edit", "tomsik68"]
+		}, {
+			"name": "Set Block Data",
+			"desc": " Changes the Data Value of the choosen block in the Selection Box ",
+			"dl": "http://podshot.github.io/files/SetBlockData.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/SetBlockData.py",
+			"author": "Tomsik68",
+			"categories": ["block_edit", "tomsik68"]
+		}, {
+			"name": "Fireworks Editor",
+			"desc": " Creates firework rocket with custom explosion effects",
+			"dl": "http://podshot.github.io/files/FireworksEdit.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/FireworksEdit.py",
+			"author": "Tomsik68",
+			"categories": ["item_edit", "tomsik68"]
+		}, {
+			"name": "Fireworks Spawner",
+			"desc": " Select container(s) which will be changed to mob spawners that spawn the firework rocket inside.<BR> This filter is designed to work along with Fireworks Editor.",
+			"dl": "http://podshot.github.io/files/FireworksSpawner.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/FireworksSpawner.py",
+			"author": "Tomsik68",
+			"categories": ["item_edit", "tile_entity_edit", "spawners", "tomsik68"]
+		}, {
+			"name": "Spawner To Command Block",
+			"desc": "All spawners in selection box will be changed to command blocks using the new /summon command.",
+			"dl": "files/SpawnerToCommandBlock.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/SpawnerToCommandBlock.py",
+			"author": "Tomsik68",
+			"categories": ["tile_entity_edit", "spawners", "cmd_blocks", "tomsik68"]
+		}, {
+		    "name": "Custom Heads",
+			"desc": "Allows creation of custom heads in their block form, comes with a list of premade heads",
+			"dl": "files/Custom%20Heads.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/Custom%20Heads.py",
+			"author": "Podshot",
+			"categories": ["tile_entity_edit", "block_edit", "podshot"]
+		}, {
+			"name": "Head to UUID",
+			"desc": "Converts the head format from pre-1.8 to 1.8 format",
+			"dl": "files/Head%20to%20UUID.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/Head%20to%20UUID.py",
+			"author": "Podshot",
+			"categories": ["tile_entity_edit", "block_edit", "podshot"]
+		}, {
+			"name": "Update Filters",
+			"desc": "Updates filters that use a JSON format webpage, more information will be provided later",
+			"dl": "files/Update%20Filters.py",
+			"src": "https://github.com/Podshot/MCEdit-Filters/blob/master/Update%20Filters.py",
+			"author": "Podshot",
+			"categories": ["podshot"]
+		}
+	]
+}
