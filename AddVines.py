@@ -24,8 +24,8 @@ BIT_EAST = 8
 # Returns collections of X/Z coordinates of leaves around specified block in level
 def findLeaves(level,x,y,z,leaveType,leaveData):
     result = []
-    rangeX = range(x-1,x+1)
-    rangeZ = range(z-1,z+1)
+    rangeX = range(x-1,x+2)
+    rangeZ = range(z-1,z+2)
     for rX in rangeX:
         if(level.blockAt(rX,y,z) == leaveType and level.blockDataAt(rX,y,z) == leaveData):
             result.append([rX,z])
@@ -70,7 +70,7 @@ def perform(level, box, options):
                                 vineData = vineData + BIT_NORTH
                         # if there are leaves, we can randomly choose, if we want to grow vines here
                         if(len(leaves) > 0 and random.randint(0,99) < chance):
-                            yrange = range(y-length-random.randint(1,len_diversity),y)
+                            yrange = range(y-length-random.randint(1,len_diversity),y + 1)
                             for yR in yrange:
                                 if(level.blockAt(x,yR,z) == 0):
                                     level.setBlockAt(x,yR,z,vineType)
